@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C4 App - Gestão Financeira e Vendas</title>
+
+  <!-- Estilos base e layout -->
+  <!-- Linkar os arquivos CSS aqui, ex: base.css, layout.css, componentes.css -->
+  <!-- Exemplo:
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  -->
+</head>
+<body>
+  <!-- Header / Navegação principal -->
+  <header>
+    <nav id="main-nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#dashboard" aria-current="page" title="Dashboard"><span aria-hidden="true">🏠</span> Dashboard</a></li>
+        <li><a href="#produtos" title="Produtos"><span aria-hidden="true">📦</span> Produtos</a></li>
+        <li><a href="#vendas" title="Vendas"><span aria-hidden="true">💰</span> Vendas</a></li>
+        <li><a href="#despesas" title="Despesas"><span aria-hidden="true">📉</span> Despesas</a></li>
+        <li><a href="#lucro-certo" title="Lucro Certo"><span aria-hidden="true">🧮</span> Lucro Certo</a></li>
+        <li><a href="#calculadoras" title="Calculadoras"><span aria-hidden="true">🧰</span> Calculadoras</a></li>
+        <li><a href="#metas" title="Metas"><span aria-hidden="true">🎯</span> Metas</a></li>
+        <li><a href="#relatorios" title="Relatórios"><span aria-hidden="true">📊</span> Relatórios</a></li>
+        <li><a href="#c4-ia" title="Assistente C4 IA"><span aria-hidden="true">💬</span> C4 IA</a></li>
+        <li><a href="#perfil" title="Perfil"><span aria-hidden="true">👤</span> Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard" aria-label="Dashboard">
+      <!-- Comentário: Aqui serão aplicados os estilos do dashboard.css -->
+      <!-- JS dashboard.js manipulará os dados e interações -->
+      <h1>Dashboard</h1>
+      <div class="cards-container">
+        <!-- Card: Resumo financeiro diário -->
+        <article class="card resumo-financeiro">
+          <h2>Resumo Financeiro Diário</h2>
+          <p>Vendas do dia: <span id="vendas-dia">R$ 0,00</span></p>
+          <p>Produtos vendidos: <span id="produtos-vendidos">0</span></p>
+          <p>Meta mensal: <span id="meta-mensal">0%</span></p>
+          <p>Lucro líquido: <span id="lucro-liquido">R$ 0,00</span></p>
+        </article>
+
+        <!-- Card: Ações rápidas -->
+        <article class="card acoes-rapidas">
+          <h2>Ações Rápidas</h2>
+          <button id="btn-nova-venda" type="button">Nova Venda</button>
+          <button id="btn-novo-produto" type="button">Novo Produto</button>
+          <button id="btn-calculadora-margem" type="button">Calculadora de Margem</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" aria-label="Produtos">
+      <!-- Comentário: Estilos em produtos.css -->
+      <!-- JS produtos.js para funcionalidades -->
+      <h1>Produtos</h1>
+      <div class="produtos-lista">
+        <!-- Lista de produtos será renderizada aqui -->
+      </div>
+      <div class="produto-cadastro">
+        <!-- Formulário para cadastro de produto -->
+      </div>
+    </section>
+
+    <!-- Vendas -->
+    <section id="vendas" aria-label="Vendas">
+      <!-- Comentário: Estilos em vendas.css -->
+      <!-- JS vendas.js para funcionalidades -->
+      <h1>Vendas</h1>
+      <div class="vendas-registro">
+        <!-- Formulário para registro de venda -->
+      </div>
+      <div class="vendas-historico">
+        <!-- Histórico e filtros -->
+      </div>
+    </section>
+
+    <!-- Despesas -->
+    <section id="despesas" aria-label="Despesas">
+      <!-- Comentário: Estilos em despesas.css -->
+      <!-- JS despesas.js -->
+      <h1>Despesas</h1>
+      <div class="despesas-cadastro">
+        <!-- Formulário de despesas -->
+      </div>
+      <div class="despesas-lista">
+        <!-- Lista e filtros -->
+      </div>
+    </section>
+
+    <!-- Lucro Certo -->
+    <section id="lucro-certo" aria-label="Lucro Certo">
+      <!-- Comentário: estilos em lucro-certo.css -->
+      <!-- JS lucro-certo.js -->
+      <h1>Lucro Certo</h1>
+      <div class="analise-lucro">
+        <!-- Análises, projeções e alertas -->
+      </div>
+    </section>
+
+    <!-- Calculadoras -->
+    <section id="calculadoras" aria-label="Calculadoras">
+      <!-- Comentário: estilos em calculadoras.css -->
+      <!-- JS calculadoras.js -->
+      <h1>Calculadoras</h1>
+      <div class="calculadora-frete">
+        <!-- Calculadora de frete -->
+      </div>
+      <div class="calculadora-margem">
+        <!-- Calculadora de margem -->
+      </div>
+      <div class="calculadora-preco-venda">
+        <!-- Calculadora de preço de venda -->
+      </div>
+      <div class="calculadora-custo-unidade">
+        <!-- Calculadora de custo por unidade -->
+      </div>
+      <div class="simulador-meta-lucro">
+        <!-- Simulador de meta de lucro -->
+      </div>
+    </section>
+
+    <!-- Metas -->
+    <section id="metas" aria-label="Metas">
+      <!-- Comentário: estilos em metas.css -->
+      <!-- JS metas.js -->
+      <h1>Metas</h1>
+      <div class="definicao-metas">
+        <!-- Formulário para definição de metas -->
+      </div>
+      <div class="acompanhamento-metas">
+        <!-- Progresso e histórico -->
+      </div>
+    </section>
+
+    <!-- Relatórios -->
+    <section id="relatorios" aria-label="Relatórios">
+      <!-- Comentário: estilos em relatorios.css -->
+      <!-- JS relatorios.js -->
+      <h1>Relatórios</h1>
+      <div class="relatorio-vendas">
+        <!-- Relatório de vendas -->
+      </div>
+      <div class="relatorio-lucratividade">
+        <!-- Relatório de lucratividade -->
+      </div>
+      <div class="relatorio-despesas">
+        <!-- Relatório de despesas -->
+      </div>
+    </section>
+
+    <!-- Assistente C4 IA -->
+    <section id="c4-ia" aria-label="Assistente C4 IA">
+      <!-- Comentário: estilos em c4-ia.css -->
+      <!-- JS c4-ia.js -->
+      <h1>Assistente Virtual C4 IA</h1>
+      <div class="assistente-chat">
+        <!-- Interface do assistente virtual -->
+      </div>
+    </section>
+
+    <!-- Perfil do Usuário -->
+    <section id="perfil" aria-label="Perfil do Usuário">
+      <!-- Comentário: estilos em perfil.css -->
+      <!-- JS perfil.js -->
+      <h1>Perfil</h1>
+      <div class="dados-usuario">
+        <!-- Nome, email, foto -->
+      </div>
+      <div class="preferencias">
+        <!-- Configurações do app -->
+      </div>
+      <div class="dados-empresa">
+        <!-- Nome da empresa, CNPJ, dados fiscais -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 C4 App - Gestão Financeira e Vendas</p>
+  </footer>
+
+  <!-- Scripts JS -->
+  <!-- Linkar os arquivos JS aqui com defer -->
+  <!-- Exemplo:
+  <script src="js/app.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+  -->
+</body>
+</html>
