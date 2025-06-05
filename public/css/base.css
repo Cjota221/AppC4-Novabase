@@ -1,0 +1,185 @@
+/* base.css - Reset e variáveis CSS */
+
+:root {
+  /* Cores principais */
+  --rosa-pink: #ec4899;
+  --dourado: #facc15;
+  --cinza-claro: #f9f9f9;
+  --cinza-medio: #cccccc;
+  --cinza-escuro: #333333;
+  --branco: #ffffff;
+
+  /* Tipografia */
+  --fonte-principal: 'Poppins', sans-serif;
+  --fonte-tamanho-base: 16px;
+  --fonte-peso-normal: 400;
+  --fonte-peso-bold: 700;
+
+  /* Espaçamentos */
+  --espaco-pequeno: 8px;
+  --espaco-medio: 16px;
+  --espaco-grande: 24px;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-tamanho-base);
+  font-weight: var(--fonte-peso-normal);
+  color: var(--cinza-escuro);
+  background-color: var(--cinza-claro);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  color: var(--rosa-pink);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--dourado);
+  outline: none;
+}
+
+/* Cabeçalho e navegação */
+header {
+  background-color: var(--branco);
+  border-bottom: 2px solid var(--dourado);
+  padding: var(--espaco-medio);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#main-nav li {
+  margin: 0 var(--espaco-pequeno);
+}
+
+#main-nav a {
+  font-weight: var(--fonte-peso-bold);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-grande);
+  padding: var(--espaco-grande);
+}
+
+@media (min-width: 600px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--branco);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(236, 72, 153, 0.15);
+  padding: var(--espaco-medio);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: 0 6px 12px rgba(250, 204, 21, 0.3);
+}
+
+/* Títulos */
+h1, h2 {
+  color: var(--rosa-pink);
+  font-weight: var(--fonte-peso-bold);
+  margin-bottom: var(--espaco-medio);
+}
+
+/* Botões */
+button {
+  background-color: var(--rosa-pink);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: var(--fonte-peso-bold);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(236, 72, 153, 0.4);
+}
+
+button:hover,
+button:focus {
+  background-color: var(--dourado);
+  outline: none;
+  box-shadow: 0 4px 12px rgba(250, 204, 21, 0.6);
+}
+
+/* Layout geral do main */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-grande);
+}
+
+/* Seções */
+section {
+  margin-bottom: var(--espaco-grande);
+}
+
+/* Inputs e formulários básicos */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: var(--espaco-medio);
+  border: 1px solid var(--cinza-medio);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--fonte-principal);
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--rosa-pink);
+  outline: none;
+  box-shadow: 0 0 5px var(--rosa-pink);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: var(--espaco-medio);
+  background-color: var(--branco);
+  border-top: 2px solid var(--dourado);
+  color: var(--cinza-escuro);
+  font-size: 0.9rem;
+}
+
+/* Scroll suave para navegação */
+html {
+  scroll-behavior: smooth;
+}
