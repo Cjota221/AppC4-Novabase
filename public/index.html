@@ -8,6 +8,7 @@
         Comentário: Favicon e meta tags adicionais podem ser inseridos aqui.
         Exemplo: <link rel="icon" href="favicon.ico" type="image/x-icon">
     -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
 
     <!-- 
         Comentário: Links para arquivos CSS Globais (base, layout)
@@ -32,8 +33,7 @@
         /* Cabeçalho */
         .app-header { 
             background-color: #db1472; /* Rosa Principal da paleta */
-            /* Mantendo o degradê, agora com o rosa principal */
-            background-image: linear-gradient(to right, #db1472, #ec4899); /* Rosa principal para um tom similar */
+            background-image: linear-gradient(to right, #db1472, #ec4899); 
             color: white; 
             padding: 0.8rem 1rem; 
             display: flex;
@@ -46,8 +46,8 @@
         }
         .app-header-title {
             margin: 0;
-            font-size: 1.6rem; /* Um pouco maior */
-            font-weight: 700; /* Fonte mais grossa */
+            font-size: 1.6rem; 
+            font-weight: 700; 
         }
         .menu-toggle {
             background: none;
@@ -61,7 +61,7 @@
             justify-content: center;
         }
         .menu-toggle svg {
-            width: 30px; /* Icone um pouco maior */
+            width: 30px; 
             height: 30px;
         }
 
@@ -73,25 +73,24 @@
             z-index: 1001; 
             top: 0;
             left: 0;
-            background-color: #db1472; /* Rosa Principal da paleta como base */
-            /* Degradê sutil para a sidebar usando tons de rosa e talvez um toque de dourado no futuro */
-            background-image: linear-gradient(to bottom, #db1472, #c01062); /* Rosa um pouco mais escuro */
+            background-color: #db1472; 
+            background-image: linear-gradient(to bottom, #db1472, #c01062); 
             overflow-x: hidden;
             transition: 0.3s ease-in-out; 
-            padding-top: 20px; /* Reduzido padding-top pois o header da sidebar agora tem seu próprio padding */
+            padding-top: 20px; 
             box-shadow: 4px 0 8px rgba(0,0,0,0.25);
             display: flex;
             flex-direction: column;
         }
         .sidebar-nav.open {
-            width: 260px; /* Um pouco mais larga */
+            width: 260px; 
         }
-        .sidebar-nav-header { /* Para o título C4 e botão de fechar dentro da sidebar */
+        .sidebar-nav-header { 
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px; /* Ajuste no padding */
-            border-bottom: 1px solid #c01062; /* Linha separadora abaixo do header da sidebar */
+            padding: 15px 20px; 
+            border-bottom: 1px solid #c01062; 
             margin-bottom: 10px;
         }
         .sidebar-nav-header .sidebar-title {
@@ -100,21 +99,21 @@
             font-weight: 700;
             margin:0;
         }
-        .sidebar-nav .close-btn { /* Movido para dentro do .sidebar-nav-header implicitamente */
+        .sidebar-nav .close-btn { 
             font-size: 2.2rem; 
             font-weight: 700;
             color: #fce7f3; 
             background: none;
             border: none;
             cursor: pointer;
-            padding: 5px; /* Adicionado padding para facilitar o clique */
+            padding: 5px; 
         }
         .sidebar-nav .close-btn:hover {
             color: #f8b81f; 
         }
         .sidebar-nav-links {
             flex-grow: 1;
-            overflow-y: auto; /* Permite scroll se muitos itens */
+            overflow-y: auto; 
         }
 
         .sidebar-nav a {
@@ -123,23 +122,23 @@
             font-size: 1.15rem; 
             font-weight: 500; 
             color: #fce7f3; 
-            display: flex; /* Para alinhar ícone e texto */
-            align-items: center; /* Alinha verticalmente ícone e texto */
+            display: flex; 
+            align-items: center; 
             transition: 0.2s ease-in-out;
             border-bottom: 1px solid #c01062; 
         }
-        .sidebar-nav a svg { /* Estilo para os ícones SVG no menu */
-            margin-right: 12px; /* Espaçamento entre ícone e texto */
+        .sidebar-nav a svg { 
+            margin-right: 12px; 
             width: 20px;
             height: 20px;
-            vertical-align: middle; /* Embora flex alignItems deva cuidar disso */
-            fill: none; /* Garante que o fill não sobreponha o stroke para alguns SVGs */
-            stroke: currentColor; /* Cor do ícone herda a cor do link */
+            vertical-align: middle; 
+            fill: none; 
+            stroke: currentColor; 
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
-        .sidebar-nav-links a:last-child { /* Aplicado ao container dos links */
+        .sidebar-nav-links a:last-child { 
             border-bottom: none; 
         }
         .sidebar-nav a:hover,
@@ -150,7 +149,7 @@
         }
         .sidebar-nav a:hover svg,
         .sidebar-nav a.active svg {
-            stroke: #db1472; /* Cor do ícone no hover/active */
+            stroke: #db1472; 
         }
 
 
@@ -168,9 +167,7 @@
              /* Mantém sem margin-left para sobreposição em mobile */
         }
 
-        .page-content {
-            /* Sem padding-bottom específico aqui */
-        }
+        .page-content { }
         .page-title {
             color: #db1472; 
             border-bottom: 4px solid #f8b81f; 
@@ -180,14 +177,13 @@
             font-size: 2rem; 
             font-weight: 600; 
         }
-        .sub-page-title { /* Para títulos dentro de uma página, como na de planejamento */
-            color: #c01062; /* Rosa mais escuro */
+        .sub-page-title { 
+            color: #c01062; 
             font-size: 1.6rem;
             font-weight: 600;
             margin-top: 0;
             margin-bottom: 1.2rem;
         }
-
 
         /* Rodapé */
         footer {
@@ -220,25 +216,25 @@
             display: block;
         }
 
-        /* Estilos para Cards - Revertido para 80% de opacidade sem degradê extra */
-        .cards-container { /* Usado no Dashboard */
+        /* Estilos para Cards Dashboard */
+        .cards-container { 
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 1.2rem; 
             margin-bottom: 2.5rem;
         }
-        .card { /* Usado no Dashboard */
-            background-color: rgba(219, 20, 114, 0.8); /* Cor principal com 80% de opacidade */
+        .card { 
+            background-color: rgba(219, 20, 114, 0.8); 
             border-radius: 10px; 
             padding: 1.8rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
-            transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, background-color 0.25s ease-in-out; /* Alterado para background-color */
+            transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, background-color 0.25s ease-in-out; 
             color: #ffffff; 
         }
         .card:hover {
             transform: translateY(-6px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
-            background-color: rgba(219, 20, 114, 0.9); /* Um pouco menos transparente no hover */
+            background-color: rgba(219, 20, 114, 0.9); 
         }
         .card-title {
             font-size: 1.25rem; 
@@ -263,7 +259,7 @@
             margin-top: 1.8rem;
             flex-wrap: wrap; 
         }
-        .btn, /* Classe genérica para botões */
+        .btn, 
         .btn-action {
             background-color: #f8b81f; 
             color: #5c3c00; 
@@ -275,8 +271,8 @@
             font-weight: 600; 
             transition: background-color 0.2s, transform 0.1s;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-decoration: none; /* Para links estilizados como botões */
-            display: inline-flex; /* Para alinhar ícones dentro se necessário */
+            text-decoration: none; 
+            display: inline-flex; 
             align-items: center;
             justify-content: center;
         }
@@ -289,28 +285,28 @@
         .btn-action:active {
             transform: translateY(0px);
         }
-        .btn-primary { /* Botão com cor principal */
+        .btn-primary { 
             background-color: #db1472;
             color: white;
         }
         .btn-primary:hover {
             background-color: #c01062;
         }
-        .btn-secondary { /* Botão com cor secundária ou para cancelamento */
-            background-color: #e2e8f0; /* Cinza claro */
-            color: #475569; /* Cinza escuro */
+        .btn-secondary { 
+            background-color: #e2e8f0; 
+            color: #475569; 
         }
         .btn-secondary:hover {
-            background-color: #cbd5e1; /* Cinza um pouco mais escuro */
+            background-color: #cbd5e1; 
         }
-        .btn-danger { /* Botão para ações destrutivas como excluir */
-            background-color: #ef4444; /* Vermelho */
+        .btn-danger { 
+            background-color: #ef4444; 
             color: white;
         }
         .btn-danger:hover {
-            background-color: #dc2626; /* Vermelho mais escuro */
+            background-color: #dc2626; 
         }
-        .btn-sm { /* Botão pequeno para ações em tabelas */
+        .btn-sm { 
             padding: 0.4rem 0.8rem;
             font-size: 0.85rem;
         }
@@ -340,7 +336,7 @@
         .form-group label {
             display: block;
             font-weight: 500;
-            color: #4b5563; /* Cinza escuro para labels */
+            color: #4b5563; 
             margin-bottom: 0.4rem;
         }
         .form-group input[type="text"],
@@ -352,16 +348,16 @@
         .form-group select {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #d1d5db; /* Cinza claro para borda */
+            border: 1px solid #d1d5db; 
             border-radius: 6px;
-            box-sizing: border-box; /* Para o padding não aumentar a largura total */
+            box-sizing: border-box; 
             font-size: 1rem;
-            color: #374151; /* Cinza bem escuro para texto do input */
+            color: #374151; 
         }
         .form-group input[type="file"] {
-            padding: 0.5rem; /* Ajuste específico para file input */
+            padding: 0.5rem; 
         }
-        .form-group input[type="checkbox"] { /* Estilo para checkbox */
+        .form-group input[type="checkbox"] { 
             margin-right: 0.5rem;
             vertical-align: middle;
         }
@@ -398,14 +394,7 @@
         }
 
         /* Estilos para Tabelas Genéricas (Produtos, Vendas, Despesas) */
-        .data-table-container {
-            overflow-x: auto; 
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-top: 1.5rem;
-        }
-        .data-table {
+        .data-table { 
             width: 100%;
             border-collapse: collapse;
         }
@@ -553,16 +542,16 @@
         /* Página de Despesas Específico */
         .despesas-cards-container {
             display: grid;
-            grid-template-columns: 1fr; /* Uma coluna por padrão para mobile */
+            grid-template-columns: 1fr; 
             gap: 1.5rem;
         }
-        @media (min-width: 768px) { /* Duas colunas para tablets e maiores */
+        @media (min-width: 768px) { 
             .despesas-cards-container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         .card-despesa {
-            background-color: #fff1f2; /* Alterado para rosinha claro */
+            background-color: #fff1f2; 
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: 0 4px 8px rgba(0,0,0,0.07);
@@ -665,26 +654,26 @@
         }
 
         /* --- NOVOS ESTILOS PARA PRODUTOS E VENDAS EM CARDS --- */
-        .item-cards-container { /* Container genérico para cards de produto/venda */
+        .item-cards-container { 
             display: grid;
-            grid-template-columns: 1fr; /* Uma coluna por padrão (mobile) */
-            gap: 1.5rem; /* Espaçamento entre os cards */
+            grid-template-columns: 1fr; 
+            gap: 1.5rem; 
             margin-top: 1.5rem;
         }
-        @media (min-width: 768px) { /* Duas colunas para tablets e maiores */
-            .item-cards-container {
+        @media (min-width: 640px) { 
+            .item-cards-container { 
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        .product-card, .sale-card { /* Estilo base para cards de produto e venda */
+        .product-card, .sale-card { 
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             padding: 1.2rem;
             display: flex;
             flex-direction: column;
-            border-left: 5px solid #f8b81f; /* Destaque dourado */
+            border-left: 5px solid #f8b81f; 
         }
         .product-card:hover, .sale-card:hover {
             transform: translateY(-3px);
@@ -708,19 +697,20 @@
             font-size: 0.9rem;
             color: #4b5563;
             margin-bottom: 0.3rem;
+            line-height: 1.4;
         }
         .product-card p strong, .sale-card p strong {
             color: #374151;
         }
-        .product-card .actions-cell, .sale-card .actions-cell { /* Renomeado para card-actions */
-            margin-top: auto; /* Empurra ações para baixo */
+        .product-card .actions-cell, .sale-card .actions-cell { 
+            margin-top: auto; 
             padding-top: 0.75rem;
             display: flex;
             gap: 0.5rem;
             justify-content: flex-end;
         }
-         .sale-card .status-badge { /* Reutilizando badge de status */
-            display: inline-block; /* Para poder aplicar margin se necessário */
+         .sale-card .status-badge { 
+            display: inline-block; 
             margin-top: 0.5rem;
         }
         /* FIM NOVOS ESTILOS */
@@ -730,10 +720,10 @@
         .dividas-list-container {
             margin-top: 1.5rem;
             display: grid;
-            grid-template-columns: 1fr; /* Default para mobile */
+            grid-template-columns: 1fr; 
             gap: 1rem;
         }
-         @media (min-width: 768px) { /* Duas colunas para tablets e maiores */
+         @media (min-width: 768px) { 
             .dividas-list-container {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -807,6 +797,136 @@
             font-weight: 600;
         }
 
+        /* Lucro Certo Page Specific Styles */
+        #lucro-certo-page .form-group {
+            margin-bottom: 0.8rem; 
+        }
+        #lucro-certo-page .form-group label {
+            margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+        }
+        #lucro-certo-page .form-group input,
+        #lucro-certo-page .form-group select {
+            padding: 0.6rem;
+            font-size: 0.95rem;
+        }
+        .lucro-certo-main-content {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 1.5rem;
+        }
+        @media(min-width: 768px){ 
+             .lucro-certo-main-content {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            }
+        }
+        .lucro-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .lucro-card h3 {
+            color: #c01062; 
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #fbcfe8;
+            padding-bottom: 0.5rem;
+        }
+        .lucro-info p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+        }
+        .lucro-info p strong {
+            color: #db1472;
+        }
+        .lucro-info .destaque-lucro {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #16a34a; 
+        }
+         .lucro-info .destaque-preco {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #db1472; 
+        }
+        .lucro-certo-alert {
+            padding: 0.75rem 1rem;
+            margin-top: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        .alert-warning { 
+            background-color: #fffbeb;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+         .alert-info { 
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+        }
+        #lucro-produto-chart-container {
+            max-width: 280px; 
+            margin: 1rem auto;
+        }
+
+        /* Página Calculadoras Hub */
+        .calculators-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
+            gap: 16px; /* Espaçamento lateral e entre cards */
+            padding: 0 16px; /* Margens laterais */
+        }
+        @media (min-width: 992px) { /* 3 colunas para desktop */
+            .calculators-grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .calculator-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 1px solid #fbcfe8; /* Borda rosa clara */
+            display: flex; /* Para alinhar conteúdo verticalmente */
+            flex-direction: column;
+            justify-content: center;
+            min-height: 150px; /* Altura média */
+        }
+        .calculator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(219, 20, 114, 0.15); /* Sombra rosa no hover */
+        }
+        .calculator-card svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.75rem;
+            color: #db1472; /* Ícone rosa */
+            align-self: center; /* Centraliza SVG no flex container */
+        }
+        .calculator-card h4 {
+            font-size: 1.1rem;
+            color: #500724; /* Rosa escuro */
+            margin: 0;
+            font-weight: 600;
+        }
+        .calculator-page .form-container { /* Estilo específico para containers de formulário dentro das calculadoras */
+            max-width: 600px; /* Limita a largura para melhor leitura */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .calculator-page .btn-voltar-calculadoras {
+            display: inline-flex; /* Para o ícone alinhar com o texto */
+            align-items: center;
+        }
+
 
     </style>
     <!-- 
@@ -851,7 +971,7 @@
                 <svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
                 Lucro Certo
             </a>
-            <a href="#calculadoras" class="sidebar-nav-item" data-page="calculadoras-page">
+            <a href="#calculadoras" class="sidebar-nav-item" data-page="calculadoras-page"> <!-- NOVO ITEM DE MENU -->
                 <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="16" y2="14"></line><line x1="8" y1="18" x2="16" y2="18"></line></svg>
                 Calculadoras
             </a>
@@ -982,35 +1102,8 @@
             </div>
 
             <h3 style="color: #db1472; font-weight: 500; margin-top: 2rem;">Lista de Produtos Cadastrados</h3>
-            <!-- ATUALIZAÇÃO: Lista de Produtos em Cards -->
             <div class="item-cards-container" id="product-cards-list">
-                <!-- Exemplo de Card de Produto 1 -->
-                <div class="product-card">
-                    <img src="https://placehold.co/300x180/f8b81f/db1472?text=Bolsa+C4" alt="Bolsa Elegance Rosa" class="product-card-image">
-                    <h4>Bolsa Elegance Rosa</h4>
-                    <p><strong>Categoria:</strong> Bolsas</p>
-                    <p><strong>Custo (Compra):</strong> R$ 45,00</p>
-                    <p><strong>Estoque:</strong> 15 unidades</p>
-                    <p><strong>Custo Total Unit.:</strong> R$ 55,00</p>
-                    <div class="actions-cell">
-                        <button class="btn btn-sm btn-secondary" title="Editar"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
-                        <button class="btn btn-sm btn-primary" title="Ver Detalhes"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                    </div>
-                </div>
-                <!-- Exemplo de Card de Produto 2 -->
-                <div class="product-card">
-                    <img src="https://placehold.co/300x180/db1472/f8b81f?text=Carteira+C4" alt="Carteira Glamour Dourada" class="product-card-image">
-                    <h4>Carteira Glamour Dourada</h4>
-                    <p><strong>Categoria:</strong> Carteiras</p>
-                    <p><strong>Custo (Compra):</strong> R$ 25,50</p>
-                    <p><strong>Estoque:</strong> 22 unidades</p>
-                    <p><strong>Custo Total Unit.:</strong> R$ 32,00</p>
-                    <div class="actions-cell">
-                        <button class="btn btn-sm btn-secondary" title="Editar"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
-                        <button class="btn btn-sm btn-primary" title="Ver Detalhes"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                    </div>
-                </div>
-                <!-- Comentário: Mais cards de produtos seriam adicionados aqui via JavaScript -->
+                <!-- Cards de Produto são inseridos aqui pelo JS -->
             </div>
             <p id="no-products-message" style="text-align: center; color: #6b7280; padding: 1rem; display: none;">Nenhum produto cadastrado ainda.</p>
             
@@ -1032,7 +1125,6 @@
                     Nova Venda
                 </button>
             </div>
-
             <div id="form-nova-venda-container" class="form-container" style="display: none;">
                 <h3 style="color: #db1472; font-weight: 600; margin-top:0; margin-bottom: 1.5rem;">Registar Nova Venda</h3>
                 <form id="form-nova-venda">
@@ -1047,9 +1139,7 @@
                                 <label for="venda-produto-select">Produto</label>
                                 <select id="venda-produto-select" name="venda-produto-select">
                                     <option value="">Selecione um produto</option>
-                                    <option value="prod1" data-price="129.90" data-stock="15">Bolsa Elegance Rosa (Est: 15)</option>
-                                    <option value="prod2" data-price="89.00" data-stock="22">Carteira Glamour Dourada (Est: 22)</option>
-                                    <option value="prod3" data-price="49.50" data-stock="10">Cinto Fivela Dourada (Est: 10)</option>
+                                    <!-- Populado por JS -->
                                 </select>
                             </div>
                             <div class="form-group" style="flex-grow:1; margin-bottom:0;">
@@ -1088,7 +1178,6 @@
                     </div>
                 </form>
             </div>
-
             <h3 style="color: #db1472; font-weight: 500; margin-top: 2rem;">Histórico de Vendas</h3>
             <div class="filters-container">
                  <div class="form-group">
@@ -1108,33 +1197,8 @@
                 </div>
                 <button type="button" class="btn btn-secondary" id="btn-aplicar-filtros-venda" style="align-self: flex-end; padding: 0.7rem;">Aplicar Filtros</button>
             </div>
-            <!-- ATUALIZAÇÃO: Histórico de Vendas em Cards -->
             <div class="item-cards-container" id="sales-history-cards-list">
-                <!-- Exemplo de Card de Venda 1 -->
-                <div class="sale-card">
-                    <h4>Venda ID: VEN-001</h4>
-                    <p><strong>Data:</strong> 04/06/2025</p>
-                    <p><strong>Cliente:</strong> Maria Silva</p>
-                    <p><strong>Itens:</strong> 2</p>
-                    <p><strong>Total:</strong> R$ 218,90</p>
-                    <p><strong>Status:</strong> <span class="status-badge status-pago">Pago</span></p>
-                    <div class="actions-cell">
-                        <button class="btn btn-sm btn-secondary" title="Ver Detalhes"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                    </div>
-                </div>
-                <!-- Exemplo de Card de Venda 2 -->
-                <div class="sale-card">
-                    <h4>Venda ID: VEN-002</h4>
-                    <p><strong>Data:</strong> 03/06/2025</p>
-                    <p><strong>Cliente:</strong> Joana Santos</p>
-                    <p><strong>Itens:</strong> 1</p>
-                    <p><strong>Total:</strong> R$ 49,50</p>
-                    <p><strong>Status:</strong> <span class="status-badge status-pendente">Pendente</span></p>
-                    <div class="actions-cell">
-                         <button class="btn btn-sm btn-secondary" title="Ver Detalhes"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                    </div>
-                </div>
-                <!-- Comentário: Mais cards de vendas seriam adicionados aqui via JavaScript -->
+                <!-- Cards de Histórico de Vendas são inseridos aqui pelo JS -->
             </div>
              <p id="no-vendas-message" style="text-align: center; color: #6b7280; padding: 1rem; display: none;">Nenhuma venda registada ainda.</p>
         </section>
@@ -1294,7 +1358,6 @@
                 </select>
             </div>
             <div id="lista-dividas-container" class="dividas-list-container">
-                <!-- Dívidas serão listadas aqui via JS -->
                  <p id="sem-dividas-message" style="text-align: center; color: #6b7280; padding: 1rem;">Nenhuma dívida cadastrada ainda. Respire fundo, você está no caminho certo!</p>
             </div>
             
@@ -1305,12 +1368,11 @@
 
         <!-- Nova Página/Secção: Planejamento de Quitação de Dívida -->
         <section id="planejamento-quitacao-divida-page" class="page-content">
-            <button class="btn btn-secondary" id="btn-voltar-para-dividas" style="margin-bottom: 1.5rem;">
+            <button class="btn btn-secondary btn-voltar-calculadoras" id="btn-voltar-para-dividas" style="margin-bottom: 1.5rem;"> <!-- ID corrigido -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 Voltar para Minhas Dívidas
             </button>
             <h2 class="page-title" id="titulo-planejamento-divida">Planejar Quitação: <span style="color:#c01062;">Nome da Dívida</span></h2>
-
             <div class="planejamento-layout-grid">
                 <div class="form-container">
                     <h3 class="sub-page-title">💰 Defina sua Estratégia</h3>
@@ -1323,10 +1385,8 @@
                     <div class="form-group">
                         <label for="planejamento-periodo">Com qual frequência?</label>
                         <select id="planejamento-periodo">
-                            <option value="dia">por Dia</option>
-                            <option value="semana">por Semana</option>
-                            <option value="quinzena" selected>por Quinzena</option>
-                            <option value="mes">por Mês</option>
+                            <option value="dia">por Dia</option><option value="semana">por Semana</option>
+                            <option value="quinzena" selected>por Quinzena</option><option value="mes">por Mês</option>
                         </select>
                     </div>
                      <div class="form-group">
@@ -1338,7 +1398,6 @@
                     </div>
                     <p id="resultado-calculo-quitacao" style="font-weight:600; color:#166534; margin-top:1rem;"></p>
                 </div>
-
                 <div class="form-container" style="background-color: #fdf2f8;">
                     <h3 class="sub-page-title">🎯 Sua Meta de Quitação</h3>
                     <p>Dívida: <strong id="meta-nome-divida-display">N/A</strong></p>
@@ -1356,7 +1415,6 @@
                     </div>
                 </div>
             </div>
-
              <div class="planejamento-layout-grid" style="margin-top:1.5rem;">
                  <div class="summary-section" id="sugestoes-vendas-quitacao">
                     <h3 class="sub-page-title">💡 Ideias para Acelerar</h3>
@@ -1372,30 +1430,302 @@
             </div>
         </section>
 
-
+        <!-- Etapa 6: Lucro Certo -->
         <section id="lucro-certo-page" class="page-content">
-            <h2 class="page-title">Lucro Certo</h2>
-            <p>Análise, projeções, alertas e recomendações.</p>
+            <h2 class="page-title">🎯 Lucro Certo</h2>
+            <div class="form-group">
+                <label for="lucro-produto-select">Selecione um Produto para Análise:</label>
+                <select id="lucro-produto-select">
+                    <option value="">-- Escolha um Produto --</option>
+                    <!-- Produtos serão populados por JS -->
+                </select>
+            </div>
+
+            <div id="lucro-certo-content" style="display:none;"> 
+                <div class="lucro-certo-main-content">
+                    <div class="lucro-card" id="analise-produto-lucro">
+                        <h3>Análise do Produto: <span id="lucro-nome-produto-display" style="color:#db1472;"></span></h3>
+                        <div class="lucro-info">
+                            <p>Custo Total Unitário: <strong id="lucro-custo-total-display">R$ 0,00</strong></p>
+                            <div class="form-group">
+                                <label for="lucro-margem-desejada">Margem de Lucro Desejada (%):</label>
+                                <input type="number" id="lucro-margem-desejada" value="50" min="0"> 
+                            </div>
+                            <p>Preço de Venda Sugerido: <strong class="destaque-preco" id="lucro-preco-venda-sugerido">R$ 0,00</strong></p>
+                            <p>Lucro Líquido por Unidade: <strong class="destaque-lucro" id="lucro-liquido-unidade">R$ 0,00</strong></p>
+                        </div>
+                        <div id="lucro-produto-chart-container">
+                             <canvas id="lucro-produto-chart"></canvas>
+                        </div>
+                         <div id="alerta-margem-baixa" class="lucro-certo-alert alert-warning" style="display:none;">
+                            <strong>Atenção!</strong> Sua margem de lucro está abaixo de 30%. Considere revisar seus custos ou preço de venda.
+                        </div>
+                    </div>
+
+                    <div class="lucro-card" id="projecoes-metas-lucro">
+                        <h3>Projeções e Metas</h3>
+                        <div class="form-group">
+                            <label for="lucro-qtd-vender-mes">Se eu vender <input type="number" id="lucro-qtd-vender-mes" value="10" min="1" style="width:70px; padding:0.3rem; text-align:center;"> unidades/mês:</label>
+                            <p>Lucro Mensal Projetado: <strong class="destaque-lucro" id="lucro-mensal-projetado">R$ 0,00</strong></p>
+                        </div>
+                        <hr style="margin: 1.5rem 0; border-color: #fbcfe8;">
+                        <div class="form-group">
+                             <label for="lucro-desejado-mensal">Para lucrar R$ <input type="number" id="lucro-desejado-mensal" value="1000" min="1" step="50" style="width:100px; padding:0.3rem; text-align:center;"> por mês:</label>
+                            <p>Você precisa vender: <strong id="lucro-meta-vendas-unidades" style="color:#c01062;">0 unidades</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="lucro-card" id="alertas-recomendacoes-lucro" style="margin-top:1.5rem;">
+                    <h3>💡 Alertas e Recomendações</h3>
+                    <div id="custo-oculto-alerta" class="lucro-certo-alert alert-info" style="display: none;">
+                        <strong>Lembrete:</strong> Já contabilizou todos os custos variáveis como taxas de cartão, comissões ou pequenos brindes?
+                    </div>
+                     <div id="sugestao-preco-ideal" class="lucro-certo-alert alert-info" style="display:none;">
+                        <p><strong>Sugestão de Preço Ideal:</strong> Com base nos seus custos e uma margem X, seu preço poderia ser Y.</p>
+                    </div>
+                     <div id="sugestao-ajuste-custo" class="lucro-certo-alert alert-info" style="display:none;">
+                        <p><strong>Ajuste de Custos:</strong> Para aumentar seu lucro, tente negociar com fornecedores ou otimizar o uso de materiais.</p>
+                    </div>
+                </div>
+            </div>
+            <p id="lucro-certo-selecione-produto-msg" style="text-align:center; color:#6b7280; padding:1rem;">Selecione um produto acima para ver a análise de lucro.</p>
+
         </section>
+
+        <!-- Etapa 6: Calculadoras (HUB) -->
         <section id="calculadoras-page" class="page-content">
             <h2 class="page-title">Calculadoras</h2>
-            <p>Frete, margem, preço de venda, custo por unidade, metas.</p>
+            <p style="text-align: center; margin-bottom: 2rem; color: #500724;">Selecione uma calculadora abaixo para começar!</p>
+
+            <div class="calculators-grid-container">
+                <div class="calculator-card" data-target-calculator="calc-lucro-ideal-page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path><circle cx="12" cy="12" r="3"></circle></svg> 
+                    <h4>Lucro Ideal</h4>
+                </div>
+                <div class="calculator-card" data-target-calculator="calc-frete-unitario-page">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM16 6a3 3 0 100-6 3 3 0 000 6zM21 14H3M7 14V4M18 14h1a2 2 0 002-2V7a2 2 0 00-2-2h-1"></path><path d="M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"></path><path d="M16 6h2"></path><path d="M14 14h4"></path></svg>
+                    <h4>Frete Unitário</h4>
+                </div>
+                <div class="calculator-card" data-target-calculator="calc-meta-vendas-page">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> 
+                    <h4>Meta de Vendas</h4>
+                </div>
+                <div class="calculator-card" data-target-calculator="calc-reinvestimento-page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 18V6"></path><path d="M15 9l-3-3-3 3"></path><path d="M9 15l3 3 3-3"></path></svg> 
+                    <h4>Reinvestimento Inteligente</h4>
+                </div>
+                <div class="calculator-card" data-target-calculator="calc-precificacao-manual-page">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l5 5-14 14-5-5 14-14zm-5 5l-1.5-1.5M18 13l-1.5-1.5"></path><path d="M13 7.5l1.5 1.5"></path><path d="M3 21l8-8"></path></svg> 
+                    <h4>Precificação Manual</h4>
+                </div>
+            </div>
         </section>
+
+        <!-- Página: Calculadora de Lucro Ideal -->
+        <section id="calc-lucro-ideal-page" class="page-content calculator-page">
+            <button class="btn btn-secondary btn-voltar-calculadoras" style="margin-bottom: 1.5rem;">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para Calculadoras
+            </button>
+            <h2 class="page-title">Calculadora de Lucro Ideal</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="calc-lucro-ideal-produto-select">Selecione o Produto:</label>
+                    <select id="calc-lucro-ideal-produto-select">
+                        <option value="">-- Escolha um Produto --</option>
+                        <!-- Populado por JS -->
+                    </select>
+                </div>
+                <div id="calc-lucro-ideal-produto-detalhes" style="display:none;">
+                    <p><strong>Custo de Compra:</strong> <span id="calc-lucro-ideal-custo-compra">R$ 0,00</span></p>
+                    <p><strong>Custo Fixo Unitário:</strong> <span id="calc-lucro-ideal-custo-fixo">R$ 0,00</span></p>
+                    <p><strong>Custo Variável Unitário:</strong> <span id="calc-lucro-ideal-custo-variavel">R$ 0,00</span></p>
+                    <p><strong>Custo Frete Unitário (Estimado):</strong> <span id="calc-lucro-ideal-custo-frete">R$ 0,00</span></p>
+                    <p style="font-weight:bold; color:#c01062;">Custo Total do Produto: <strong id="calc-lucro-ideal-custo-total-produto">R$ 0,00</strong></p>
+                    <hr style="margin: 1rem 0;">
+                    <div class="form-group">
+                        <label for="calc-lucro-ideal-margem-desejada">Margem de Lucro Desejada (%):</label>
+                        <input type="number" id="calc-lucro-ideal-margem-desejada" value="50" min="0">
+                    </div>
+                    <div class="form-actions" style="justify-content: flex-start; margin-bottom:1rem;">
+                        <button class="btn btn-primary" id="btn-calcular-lucro-ideal">Calcular Lucro Ideal</button>
+                    </div>
+                    <p style="font-size: 1.1rem;">Preço de Venda Ideal: <strong class="destaque-preco" id="calc-lucro-ideal-preco-ideal">R$ 0,00</strong></p>
+                    <p style="font-size: 1.1rem;">Lucro Líquido por Unidade: <strong class="destaque-lucro" id="calc-lucro-ideal-liquido-unidade">R$ 0,00</strong></p>
+                    <div class="form-actions">
+                        <button class="btn btn-primary btn-sm" id="btn-salvar-preco-produto-lucro-ideal">Salvar Preço no Produto (Simulação)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página: Calculadora de Frete Unitário -->
+        <section id="calc-frete-unitario-page" class="page-content calculator-page">
+             <button class="btn btn-secondary btn-voltar-calculadoras" style="margin-bottom: 1.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para Calculadoras
+            </button>
+            <h2 class="page-title">Calculadora de Frete Unitário</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="calc-frete-total">Valor Total do Frete (R$):</label>
+                    <input type="number" id="calc-frete-total" step="0.01" min="0" placeholder="Ex: 50,00">
+                </div>
+                <div class="form-group">
+                    <label for="calc-frete-num-produtos">Número de Produtos no Pedido:</label>
+                    <input type="number" id="calc-frete-num-produtos" min="1" placeholder="Ex: 10">
+                </div>
+                <div class="form-actions" style="justify-content: flex-start;">
+                     <button class="btn btn-primary" id="btn-calcular-frete-unitario">Calcular Frete Unitário</button>
+                </div>
+                <p style="font-size: 1.1rem; margin-top:1rem;">Custo de Frete por Unidade: <strong class="destaque-preco" id="calc-frete-resultado">R$ 0,00</strong></p>
+                <div class="form-actions" style="margin-top:0.5rem;">
+                    <button class="btn btn-secondary btn-sm" id="btn-salvar-frete-custo-variavel">Adicionar como Custo Variável (Simulação)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página: Calculadora de Meta de Vendas -->
+        <section id="calc-meta-vendas-page" class="page-content calculator-page">
+            <button class="btn btn-secondary btn-voltar-calculadoras" style="margin-bottom: 1.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para Calculadoras
+            </button>
+            <h2 class="page-title">Calculadora de Meta de Vendas</h2>
+             <div class="form-container">
+                <div class="form-group">
+                    <label for="calc-meta-lucro-desejado">Meta de Lucro Mensal Desejada (R$):</label>
+                    <input type="number" id="calc-meta-lucro-desejado" step="50" min="0" placeholder="Ex: 1500,00">
+                </div>
+                <div class="form-group">
+                    <label for="calc-meta-produto-chave">Produto Principal para Meta:</label>
+                    <select id="calc-meta-produto-chave">
+                        <option value="">-- Escolha um Produto Chave --</option>
+                        <!-- Populado por JS -->
+                    </select>
+                </div>
+                 <div class="form-actions" style="justify-content: flex-start; margin-bottom: 1rem;">
+                     <button class="btn btn-primary" id="btn-calcular-meta-vendas">Calcular Meta de Vendas</button>
+                </div>
+                <p>Lucro por Unidade do Produto Selecionado: <strong id="calc-meta-lucro-unidade-produto">R$ 0,00</strong></p>
+                <hr style="margin: 1rem 0;">
+                <p style="font-size: 1.2rem;">Unidades a Vender para Atingir a Meta: <strong class="destaque-lucro" id="calc-meta-unidades-vender">0 unidades</strong></p>
+                
+                <div class="summary-section" style="margin-top: 1.5rem;">
+                    <h4>Sugestões de Mix de Produtos:</h4>
+                    <p><em>(Esta seção mostrará combinações de produtos para atingir a meta - funcionalidade futura)</em></p>
+                    <ul>
+                        <li>Vender X unidades do Produto A + Y unidades do Produto B</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página: Calculadora de Reinvestimento Inteligente -->
+        <section id="calc-reinvestimento-page" class="page-content calculator-page">
+            <button class="btn btn-secondary btn-voltar-calculadoras" style="margin-bottom: 1.5rem;">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para Calculadoras
+            </button>
+            <h2 class="page-title">Calculadora de Reinvestimento Inteligente</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="calc-reinvest-lucro-disponivel">Lucro Disponível para Reinvestimento (R$):</label>
+                    <input type="number" id="calc-reinvest-lucro-disponivel" step="0.01" min="0" placeholder="Ex: 500,00">
+                </div>
+                <h4 style="color:#c01062; margin-top:1.5rem;">Distribuição Sugerida (Padrão 50/30/20):</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label for="calc-reinvest-perc-negocio">% Reinvestir no Negócio:</label>
+                        <input type="number" id="calc-reinvest-perc-negocio" value="50" min="0" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="calc-reinvest-perc-reserva">% Reserva Pessoal/Emergência:</label>
+                        <input type="number" id="calc-reinvest-perc-reserva" value="30" min="0" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="calc-reinvest-perc-dividas">% Quitação de Dívidas:</label>
+                        <input type="number" id="calc-reinvest-perc-dividas" value="20" min="0" max="100">
+                    </div>
+                </div>
+                 <p id="calc-reinvest-soma-perc-aviso" style="color: #ef4444; font-size:0.85rem; display:none;">A soma dos percentuais deve ser 100%.</p>
+
+                <div class="form-actions" style="justify-content: flex-start;">
+                     <button class="btn btn-primary" id="btn-calcular-reinvestimento">Calcular Distribuição</button>
+                </div>
+
+                <div id="calc-reinvest-resultados" style="margin-top:1.5rem; padding-top:1rem; border-top: 1px solid #fbcfe8;">
+                    <p>Valor para Reinvestir: <strong style="color:#166534;" id="calc-reinvest-valor-negocio">R$ 0,00</strong></p>
+                    <p>Valor para Reserva: <strong style="color:#1d4ed8;" id="calc-reinvest-valor-reserva">R$ 0,00</strong></p>
+                    <p>Valor para Dívidas: <strong style="color:#9a3412;" id="calc-reinvest-valor-dividas">R$ 0,00</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página: Calculadora de Precificação Manual -->
+        <section id="calc-precificacao-manual-page" class="page-content calculator-page">
+            <button class="btn btn-secondary btn-voltar-calculadoras" style="margin-bottom: 1.5rem;">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para Calculadoras
+            </button>
+            <h2 class="page-title">Calculadora de Precificação Manual</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="calc-manual-custo-produto">Custo do Produto (Compra) (R$):</label>
+                    <input type="number" id="calc-manual-custo-produto" step="0.01" min="0" placeholder="Ex: 25,00">
+                </div>
+                 <div class="form-group">
+                    <label for="calc-manual-custos-variaveis">Custos Variáveis por Unidade (Embalagem, Taxas, etc.) (R$):</label>
+                    <input type="number" id="calc-manual-custos-variaveis" step="0.01" min="0" placeholder="Ex: 3,50">
+                </div>
+                 <div class="form-group">
+                    <label for="calc-manual-custos-fixos-rateio">Rateio de Custos Fixos por Unidade (R$):</label>
+                    <input type="number" id="calc-manual-custos-fixos-rateio" step="0.01" min="0" placeholder="Ex: 2,00 (Custo Fixo Unitário da pág. Despesas)">
+                </div>
+                 <div class="form-group">
+                    <label for="calc-manual-margem-lucro">Margem de Lucro Desejada (%):</label>
+                    <input type="number" id="calc-manual-margem-lucro" min="0" placeholder="Ex: 100">
+                </div>
+                 <div class="form-actions" style="justify-content: flex-start;">
+                     <button class="btn btn-primary" id="btn-calcular-preco-manual">Calcular Preço</button>
+                </div>
+                 <div style="margin-top:1.5rem; padding-top:1rem; border-top: 1px solid #fbcfe8;">
+                    <p style="font-size: 1.1rem;">Custo Total por Unidade: <strong id="calc-manual-custo-total-display">R$ 0,00</strong></p>
+                    <p style="font-size: 1.1rem;">Preço de Venda Calculado: <strong class="destaque-preco" id="calc-manual-preco-venda-display">R$ 0,00</strong></p>
+                    <p style="font-size: 1.1rem;">Lucro Líquido por Unidade: <strong class="destaque-lucro" id="calc-manual-lucro-liquido-display">R$ 0,00</strong></p>
+                </div>
+            </div>
+        </section>
+
+
         <section id="metas-page" class="page-content">
-            <h2 class="page-title">Metas</h2>
-            <p>Definição, acompanhamento, histórico.</p>
+            <h2 class="page-title">Definição de Metas</h2>
+            <p>Aqui você poderá definir suas metas financeiras, de vendas e de crescimento. Acompanhe seu progresso e ajuste suas estratégias para alcançar seus sonhos!</p>
+             <div class="form-container">
+                <p><em>Em breve: Formulários para criar metas SMART, visualização de progresso com barras e gráficos, histórico de metas alcançadas.</em></p>
+            </div>
         </section>
         <section id="relatorios-page" class="page-content">
-            <h2 class="page-title">Relatórios</h2>
-            <p>Vendas, lucratividade, despesas.</p>
+            <h2 class="page-title">Relatórios Detalhados</h2>
+            <p>Acesse relatórios completos sobre suas vendas, lucratividade, despesas e desempenho geral. Informação clara para decisões inteligentes!</p>
+            <div class="form-container">
+                <p><em>Em breve: Filtros avançados, gráficos interativos de vendas por período, produto mais vendido, despesas por categoria, DRE simplificada, etc.</em></p>
+            </div>
         </section>
         <section id="c4-ia-page" class="page-content">
-            <h2 class="page-title">C4 IA</h2>
-            <p>Assistente virtual para dúvidas, sugestões e alertas.</p>
+            <h2 class="page-title">C4 IA - Sua Assistente Virtual</h2>
+            <p>Converse com a C4 IA para tirar dúvidas, receber sugestões personalizadas, alertas importantes e insights para otimizar seu negócio.</p>
+            <div class="form-container">
+                <p><em>Em breve: Interface de chat, exemplos de perguntas, histórico de conversas e integração com as funcionalidades do app para sugestões contextuais.</em></p>
+            </div>
         </section>
         <section id="perfil-page" class="page-content"> 
-            <h2 class="page-title">Perfil</h2>
-            <p>Dados do usuário, preferências, configurações e dados da empresa.</p>
+            <h2 class="page-title">Meu Perfil e Configurações</h2>
+            <p>Gerencie seus dados pessoais, informações da sua empresa, preferências de notificação e outras configurações do C4 App.</p>
+             <div class="form-container">
+                <p><em>Em breve: Campos para nome, e-mail, dados da empresa (CNPJ, nome fantasia), configurações de moeda, tema, notificações, etc.</em></p>
+            </div>
         </section>
     </main>
 
@@ -1428,6 +1758,7 @@
             const btnShowNovaVendaForm = document.getElementById('btn-show-nova-venda-form');
             let itensVenda = []; 
 
+            // Seletores da Página de Despesas (nova estrutura)
             const formAddCustoFixo = document.getElementById('form-add-custo-fixo');
             const listaCustosFixosEl = document.getElementById('lista-custos-fixos');
             const totalCustosFixosMensaisEl = document.getElementById('total-custos-fixos-mensais');
@@ -1450,9 +1781,44 @@
             let dividasCadastradas = []; 
             const planejamentoQuitacaoDividaPage = document.getElementById('planejamento-quitacao-divida-page');
             const btnVoltarParaDividas = document.getElementById('btn-voltar-para-dividas');
-            let dividaAtualParaPlanejamento = null; // Guarda a dívida selecionada
+            let dividaAtualParaPlanejamento = null; 
 
             const btnCriarMetaQuitacaoReal = document.getElementById('btn-criar-meta-quitacao-real');
+
+            // Seletores da Página Lucro Certo
+            const lucroProdutoSelect = document.getElementById('lucro-produto-select');
+            const lucroCertoContentEl = document.getElementById('lucro-certo-content');
+            const lucroNomeProdutoDisplayEl = document.getElementById('lucro-nome-produto-display');
+            const lucroCustoTotalDisplayEl = document.getElementById('lucro-custo-total-display');
+            const lucroMargemDesejadaInput = document.getElementById('lucro-margem-desejada');
+            const lucroPrecoVendaSugeridoEl = document.getElementById('lucro-preco-venda-sugerido');
+            const lucroLiquidoUnidadeEl = document.getElementById('lucro-liquido-unidade');
+            const lucroProdutoChartCanvas = document.getElementById('lucro-produto-chart');
+            let lucroProdutoChartInstance = null;
+            const alertaMargemBaixaEl = document.getElementById('alerta-margem-baixa');
+            const lucroQtdVenderMesInput = document.getElementById('lucro-qtd-vender-mes');
+            const lucroMensalProjetadoEl = document.getElementById('lucro-mensal-projetado');
+            const lucroDesejadoMensalInput = document.getElementById('lucro-desejado-mensal');
+            const lucroMetaVendasUnidadesEl = document.getElementById('lucro-meta-vendas-unidades');
+            const lucroCertoSelecioneProdutoMsg = document.getElementById('lucro-certo-selecione-produto-msg');
+
+            // Seletores das Calculadoras Individuais
+            const calcLucroIdealPage = document.getElementById('calc-lucro-ideal-page');
+            const calcFreteUnitarioPage = document.getElementById('calc-frete-unitario-page');
+            const calcMetaVendasPage = document.getElementById('calc-meta-vendas-page');
+            const calcReinvestimentoPage = document.getElementById('calc-reinvestimento-page');
+            const calcPrecificacaoManualPage = document.getElementById('calc-precificacao-manual-page');
+
+             // Seletores para os dropdowns das calculadoras
+            const calcLucroIdealProdutoSelect = document.getElementById('calc-lucro-ideal-produto-select');
+            const calcMetaVendasProdutoSelect = document.getElementById('calc-meta-produto-chave');
+
+
+            let produtosCadastrados = [ 
+                { id: 'prod1', nome: 'Bolsa Elegance Rosa', categoria: 'Bolsas', valorCustoCompra: 45.00, estoque: 15, imagem: 'https://placehold.co/300x180/f8b81f/db1472?text=Bolsa+C4' },
+                { id: 'prod2', nome: 'Carteira Glamour Dourada', categoria: 'Carteiras', valorCustoCompra: 25.50, estoque: 22, imagem: 'https://placehold.co/300x180/db1472/f8b81f?text=Carteira+C4' },
+                { id: 'prod3', nome: 'Cinto Fivela Dourada', categoria: 'Acessorios', valorCustoCompra: 15.00, estoque: 10, imagem: 'https://placehold.co/300x180/f8b81f/db1472?text=Cinto+C4' }
+            ];
 
 
             if (currentYearSpan) {
@@ -1486,7 +1852,16 @@
                     targetPage.classList.add('active');
                     if (pageId === 'planejamento-quitacao-divida-page' && data) {
                         preencherPaginaPlanejamentoQuitacao(data);
+                    } else if (pageId === 'lucro-certo-page') {
+                        if(typeof popularProdutosSelectLucroCerto === "function") popularProdutosSelectLucroCerto();
+                        if(lucroCertoContentEl) lucroCertoContentEl.style.display = 'none';
+                        if(lucroCertoSelecioneProdutoMsg) lucroCertoSelecioneProdutoMsg.style.display = 'block';
+                    } else if (pageId.startsWith('calc-')) { 
+                        if(pageId === 'calc-lucro-ideal-page' && typeof popularProdutosSelectCalcLucroIdeal === "function") popularProdutosSelectCalcLucroIdeal();
+                        if(pageId === 'calc-meta-vendas-page' && typeof popularProdutosSelectCalcMetaVendas === "function") popularProdutosSelectCalcMetaVendas();
                     }
+
+
                 } else {
                     console.warn(`Página com id '${pageId}' não encontrada. Redirecionando para Dashboard.`);
                     const dashboardPage = document.getElementById('dashboard-page');
@@ -1502,7 +1877,10 @@
                     if (produtoImagemPreview) produtoImagemPreview.style.display = 'none';
                     if (btnShowAddProductForm) btnShowAddProductForm.style.display = 'inline-flex';
                     if (productDetailsContainer) productDetailsContainer.style.display = 'none';
+                } else {
+                    if(typeof exibirProdutosEmCards === 'function') exibirProdutosEmCards(); 
                 }
+
                 if (pageId !== 'vendas-page') {
                     if (formNovaVendaContainer) formNovaVendaContainer.style.display = 'none';
                     if (formNovaVenda) formNovaVenda.reset();
@@ -1510,10 +1888,21 @@
                     itensVenda = [];
                     if (typeof atualizarResumoVenda === "function") atualizarResumoVenda();
                     if (btnShowNovaVendaForm) btnShowNovaVendaForm.style.display = 'inline-flex';
+                } else {
+                     if(typeof exibirVendasEmCards === 'function') exibirVendasEmCards(); 
+                     if(typeof popularProdutosSelectVenda === 'function') popularProdutosSelectVenda();
                 }
+
                 if (pageId !== 'despesas-page') { 
                     if(formAddCustoFixo) formAddCustoFixo.reset();
                     if(formAddCustoVariavel) formAddCustoVariavel.reset();
+                     // Limpar listas visuais
+                    if(listaCustosFixosEl) listaCustosFixosEl.innerHTML = '<p id="sem-custos-fixos" style="text-align:center; padding:1rem; color:#6b7280;">Nenhum custo fixo adicionado.</p>';
+                    if(listaCustosVariaveisEl) listaCustosVariaveisEl.innerHTML = '<p id="sem-custos-variaveis" style="text-align:center; padding:1rem; color:#6b7280;">Nenhum custo variável adicionado.</p>';
+                    if(totalCustosFixosMensaisEl) totalCustosFixosMensaisEl.textContent = 'R$ 0,00';
+                    if(custoFixoUnitarioDisplayEl) custoFixoUnitarioDisplayEl.textContent = 'R$ 0,00';
+                    if(custoVariavelUnitarioTotalDisplayEl) custoVariavelUnitarioTotalDisplayEl.textContent = 'R$ 0,00';
+
                 } else { 
                      if(typeof exibirCustosFixos === "function") exibirCustosFixos();
                      if(typeof exibirCustosVariaveis === "function") exibirCustosVariaveis();
@@ -1528,6 +1917,11 @@
                     if(planejamentoQuitacaoDividaPage) planejamentoQuitacaoDividaPage.classList.remove('active'); 
                     if(typeof exibirDividas === "function") exibirDividas();
                 }
+                if (pageId !== 'calculadoras-page' && !pageId.startsWith('calc-')) { 
+                    if(typeof resetFormsCalculadoras === "function") resetFormsCalculadoras();
+                } else if (pageId === 'calculadoras-page'){ 
+                     if(typeof resetFormsCalculadoras === "function") resetFormsCalculadoras();
+                }
             }
 
             sidebarNavItems.forEach(item => {
@@ -1537,7 +1931,7 @@
                 });
             });
             
-            const quickActionButtons = document.querySelectorAll('.btn-action[data-target-page]');
+            const quickActionButtons = document.querySelectorAll('.btn-action[data-target-page]'); 
             quickActionButtons.forEach(button => {
                 button.addEventListener('click', () => setActivePage(button.dataset.targetPage));
             });
@@ -1551,6 +1945,48 @@
             const displayCustoVariavel = document.getElementById('display-custo-variavel');
             const displayCustoFrete = document.getElementById('display-custo-frete');
             const displayCustoTotalUnidade = document.getElementById('display-custo-total-unidade');
+            const productCardsListEl = document.getElementById('product-cards-list');
+            const noProductsMessageEl = document.getElementById('no-products-message');
+
+
+            function exibirProdutosEmCards() {
+                if (!productCardsListEl) return;
+                productCardsListEl.innerHTML = '';
+                if (produtosCadastrados.length === 0) {
+                    if (noProductsMessageEl) noProductsMessageEl.style.display = 'block';
+                    return;
+                }
+                if (noProductsMessageEl) noProductsMessageEl.style.display = 'none';
+
+                produtosCadastrados.forEach(produto => {
+                    const custoFixoUnitarioAtual = parseFloat(custoFixoUnitarioDisplayEl?.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoVariavelUnitarioAtual = parseFloat(custoVariavelUnitarioTotalDisplayEl?.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoFreteSimuladoProduto = 0.80; 
+                    
+                    const custoTotalUnitario = (produto.valorCustoCompra || 0) + 
+                                            custoFixoUnitarioAtual +
+                                            custoVariavelUnitarioAtual +
+                                            custoFreteSimuladoProduto;
+
+
+                    const cardDiv = document.createElement('div');
+                    cardDiv.classList.add('product-card');
+                    cardDiv.innerHTML = `
+                        <img src="${produto.imagem || 'https://placehold.co/300x180/f8b81f/db1472?text=C4'}" alt="${produto.nome}" class="product-card-image">
+                        <h4>${produto.nome}</h4>
+                        <p><strong>Categoria:</strong> ${produto.categoria || 'N/A'}</p>
+                        <p><strong>Custo (Compra):</strong> R$ ${parseFloat(produto.valorCustoCompra || 0).toFixed(2)}</p>
+                        <p><strong>Estoque:</strong> ${produto.estoque || 0} unidades</p>
+                        <p><strong>Custo Total Unit.:</strong> R$ ${custoTotalUnitario.toFixed(2)}</p>
+                        <div class="actions-cell">
+                            <button class="btn btn-sm btn-secondary" title="Editar" data-product-id="${produto.id}"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                            <button class="btn btn-sm btn-primary" title="Ver Detalhes" data-product-id="${produto.id}"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                        </div>
+                    `;
+                    productCardsListEl.appendChild(cardDiv);
+                });
+            }
+
 
             function simularCalculoCustoTotal() {
                 if (!produtoValorCustoInput && !displayCustoTotalUnidade) return; 
@@ -1589,7 +2025,21 @@
                 formCadastroProduto.addEventListener('submit', event => {
                     event.preventDefault();
                     const nomeProdutoEl = document.getElementById('produto-nome');
-                    alert(`Produto "${nomeProdutoEl ? nomeProdutoEl.value : ''}" salvo! (Simulação)`); 
+                    const novoProduto = {
+                        id: `prod${Date.now()}`,
+                        nome: nomeProdutoEl ? nomeProdutoEl.value : 'Novo Produto',
+                        categoria: document.getElementById('produto-categoria').value,
+                        valorCustoCompra: parseFloat(document.getElementById('produto-valor-custo').value) || 0,
+                        estoque: parseInt(document.getElementById('produto-estoque').value) || 0,
+                        imagem: produtoImagemPreview.src === '#' ? 'https://placehold.co/300x180/f8b81f/db1472?text=C4' : produtoImagemPreview.src
+                    };
+                    produtosCadastrados.push(novoProduto);
+                    exibirProdutosEmCards(); 
+                    if(typeof popularProdutosSelectLucroCerto === "function") popularProdutosSelectLucroCerto(); 
+                    if(typeof popularProdutosSelectVenda === "function") popularProdutosSelectVenda(); 
+                    if(typeof popularProdutosSelectCalcLucroIdeal === "function") popularProdutosSelectCalcLucroIdeal();
+                    if(typeof popularProdutosSelectCalcMetaVendas === "function") popularProdutosSelectCalcMetaVendas();
+                    alert(`Produto "${novoProduto.nome}" salvo! (Simulação)`); 
                     formCadastroProduto.reset();
                     if(produtoImagemPreview) produtoImagemPreview.style.display = 'none';
                     formCadastroProdutoContainer.style.display = 'none';
@@ -1611,48 +2061,48 @@
                     }
                 });
             }
-            document.querySelectorAll('#table-produtos .btn-primary[title="Ver Detalhes"], #product-cards-list .btn-primary[title="Ver Detalhes"]').forEach(button => {
-                 button.addEventListener('click', () => {
-                    if (productDetailsContainer) {
-                        // Lógica para obter dados do card ou da linha da tabela clicada
-                        let productName, productCategory, productCost, productStock, productTotalCost, productImageSrc;
-                        const card = button.closest('.product-card');
-                        if (card) {
-                            productName = card.querySelector('h4').textContent;
-                            productCategory = card.querySelector('p:nth-of-type(1) strong').nextSibling.textContent.trim();
-                            productCost = card.querySelector('p:nth-of-type(2) strong').nextSibling.textContent.trim();
-                            productStock = card.querySelector('p:nth-of-type(3) strong').nextSibling.textContent.trim();
-                            productTotalCost = card.querySelector('p:nth-of-type(4) strong').nextSibling.textContent.trim();
-                            productImageSrc = card.querySelector('.product-card-image').src;
-                        } else { // Fallback para tabela se ainda existir (embora a ideia seja remover)
-                            const row = button.closest('tr');
-                            productName = row.querySelector('td:nth-child(2)').textContent;
-                            // ... buscar outros dados da linha da tabela
-                        }
-
-                        const productDetailsContentEl = document.getElementById('product-details-content');
-                        if(productDetailsContentEl) {
-                             productDetailsContentEl.innerHTML = `
-                                <div style="display:flex; gap: 1.5rem; flex-wrap:wrap;">
-                                    <img src="${productImageSrc || 'https://placehold.co/120x120/f8b81f/db1472?text=C4'}" alt="${productName}" style="width:120px; height:120px; border-radius:8px; object-fit:cover;">
-                                    <div>
-                                        <p><strong>Nome:</strong> ${productName}</p>
-                                        <p><strong>Categoria:</strong> ${productCategory}</p>
-                                        <p><strong>Valor de Custo (Compra):</strong> ${productCost}</p>
-                                        <p><strong>Estoque:</strong> ${productStock}</p>
-                                        <p><strong>Custo Total Unitário:</strong> ${productTotalCost}</p>
+            if(productCardsListEl){ 
+                productCardsListEl.addEventListener('click', (event) => {
+                    const targetButton = event.target.closest('button');
+                    if (targetButton && targetButton.title === "Ver Detalhes") {
+                         if (productDetailsContainer) {
+                            const card = targetButton.closest('.product-card');
+                            const productName = card.querySelector('h4').textContent;
+                            const categoryP = Array.from(card.querySelectorAll('p')).find(p => p.textContent.includes('Categoria:'));
+                            const productCategory = categoryP ? categoryP.textContent.replace('Categoria:', '').trim() : 'N/A';
+                            const costP = Array.from(card.querySelectorAll('p')).find(p => p.textContent.includes('Custo (Compra):'));
+                            const productCost = costP ? costP.textContent.replace('Custo (Compra):', '').trim() : 'N/A';
+                            const stockP = Array.from(card.querySelectorAll('p')).find(p => p.textContent.includes('Estoque:'));
+                            const productStock = stockP ? stockP.textContent.replace('Estoque:', '').trim() : 'N/A';
+                            const totalCostP = Array.from(card.querySelectorAll('p')).find(p => p.textContent.includes('Custo Total Unit.:'));
+                            const productTotalCost = totalCostP ? totalCostP.textContent.replace('Custo Total Unit.:', '').trim() : 'N/A';
+                            const productImageSrc = card.querySelector('.product-card-image')?.src || 'https://placehold.co/120x120/f8b81f/db1472?text=C4';
+                            
+                            const productDetailsContentEl = document.getElementById('product-details-content');
+                            if(productDetailsContentEl) {
+                                productDetailsContentEl.innerHTML = `
+                                    <div style="display:flex; gap: 1.5rem; flex-wrap:wrap;">
+                                        <img src="${productImageSrc}" alt="${productName}" style="width:120px; height:120px; border-radius:8px; object-fit:cover;">
+                                        <div>
+                                            <p><strong>Nome:</strong> ${productName}</p>
+                                            <p><strong>Categoria:</strong> ${productCategory}</p>
+                                            <p><strong>Valor de Custo (Compra):</strong> ${productCost}</p>
+                                            <p><strong>Estoque:</strong> ${productStock}</p>
+                                            <p><strong>Custo Total Unitário:</strong> ${productTotalCost}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <hr style="margin: 1rem 0;">
-                                <p><em>Seção de Histórico e outras informações do produto apareceriam aqui.</em></p>
-                            `;
+                                    <hr style="margin: 1rem 0;">
+                                    <p><em>Seção de Histórico e outras informações do produto apareceriam aqui.</em></p>
+                                `;
+                            }
+                            productDetailsContainer.style.display = 'block';
+                            if (formCadastroProdutoContainer) formCadastroProdutoContainer.style.display = 'none';
+                            if (btnShowAddProductForm) btnShowAddProductForm.style.display = 'inline-flex';
                         }
-                        productDetailsContainer.style.display = 'block';
-                        if (formCadastroProdutoContainer) formCadastroProdutoContainer.style.display = 'none';
-                        if (btnShowAddProductForm) btnShowAddProductForm.style.display = 'inline-flex';
                     }
                 });
-            });
+            }
+
             if(btnCloseProductDetails && productDetailsContainer) {
                 btnCloseProductDetails.addEventListener('click', () => productDetailsContainer.style.display = 'none');
             }
@@ -1667,6 +2117,62 @@
             const vendaDescontoPercEl = document.getElementById('venda-desconto-perc');
             const vendaValorDescontoEl = document.getElementById('venda-valor-desconto');
             const vendaTotalPagarEl = document.getElementById('venda-total-pagar');
+            const salesHistoryCardsListEl = document.getElementById('sales-history-cards-list');
+            const noVendasMessageEl = document.getElementById('no-vendas-message');
+            let vendasRegistradas = [ 
+                { id: 'VEN-001', data: '2025-06-04', cliente: 'Maria Silva', itensVendidos: [{nome:'Bolsa Elegance Rosa', qtd: 2, preco: 109.45}], total: 218.90, status: 'pago' },
+                { id: 'VEN-002', data: '2025-06-03', cliente: 'Joana Santos', itensVendidos: [{nome:'Cinto Fivela Dourada', qtd: 1, preco: 49.50}], total: 49.50, status: 'pendente' }
+            ];
+
+
+            function popularProdutosSelectVenda() {
+                if (!vendaProdutoSelect) return;
+                vendaProdutoSelect.innerHTML = '<option value="">Selecione um produto</option>'; 
+                produtosCadastrados.forEach(produto => {
+                    const option = document.createElement('option');
+                    option.value = produto.id;
+                    
+                    const custoFixoUnitario = parseFloat(custoFixoUnitarioDisplayEl?.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoVariavelUnitario = parseFloat(custoVariavelUnitarioTotalDisplayEl?.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoFrete = 0.80; 
+                    const custoTotalProduto = produto.valorCustoCompra + custoFixoUnitario + custoVariavelUnitario + custoFrete;
+                    const precoVendaSimulado = custoTotalProduto / (1 - 0.50); // Simula margem de 50%
+
+                    option.textContent = `${produto.nome} (Est: ${produto.estoque}) - R$ ${precoVendaSimulado.toFixed(2)}`;
+                    option.dataset.price = precoVendaSimulado.toFixed(2); 
+                    option.dataset.stock = produto.estoque;
+                    vendaProdutoSelect.appendChild(option);
+                });
+            }
+
+
+            function exibirVendasEmCards() {
+                if (!salesHistoryCardsListEl) return;
+                salesHistoryCardsListEl.innerHTML = '';
+                if (vendasRegistradas.length === 0) {
+                    if (noVendasMessageEl) noVendasMessageEl.style.display = 'block';
+                    return;
+                }
+                if (noVendasMessageEl) noVendasMessageEl.style.display = 'none';
+
+                vendasRegistradas.forEach(venda => {
+                    const cardDiv = document.createElement('div');
+                    cardDiv.classList.add('sale-card');
+                    cardDiv.innerHTML = `
+                        <h4>Venda ID: ${venda.id}</h4>
+                        <p><strong>Data:</strong> ${new Date(venda.data + 'T00:00:00').toLocaleDateString('pt-BR')}</p>
+                        <p><strong>Cliente:</strong> ${venda.cliente || 'Não informado'}</p>
+                        <p><strong>Itens:</strong> ${venda.itensVendidos.reduce((sum, item) => sum + item.qtd, 0)}</p>
+                        <p><strong>Total:</strong> R$ ${venda.total.toFixed(2)}</p>
+                        <p><strong>Status:</strong> <span class="status-badge status-${venda.status}">${venda.status}</span></p>
+                        <div class="actions-cell">
+                            <button class="btn btn-sm btn-secondary" title="Ver Detalhes"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                        </div>
+                    `;
+                    salesHistoryCardsListEl.appendChild(cardDiv);
+                });
+            }
+
 
             function exibirItensVenda() { 
                 if(!vendaItensLista) return;
@@ -1710,6 +2216,7 @@
                     itensVenda = []; 
                     exibirItensVenda(); 
                     atualizarResumoVenda(); 
+                    popularProdutosSelectVenda(); 
                 });
             }
             if (btnCancelNovaVenda && formNovaVendaContainer && btnShowNovaVendaForm) {
@@ -1907,7 +2414,7 @@
                     btnShowAddDividaForm.style.display = 'none';
                     if(formAddDivida) formAddDivida.reset();
                     if(dividaParcelasDetalhesDiv) dividaParcelasDetalhesDiv.style.display = 'none';
-                    if(planejamentoQuitacaoDividaPage) planejamentoQuitacaoDividaPage.classList.remove('active'); // Esconde a página de planejamento
+                    if(planejamentoQuitacaoDividaPage) planejamentoQuitacaoDividaPage.classList.remove('active'); 
                 });
             }
 
@@ -1932,9 +2439,8 @@
                 listaDividasContainerEl.innerHTML = ''; 
                 const semDividasMsg = document.getElementById('sem-dividas-message');
 
-                let dividasParaExibir = [...dividasCadastradas]; // Copia para não modificar o original se for ordenar
+                let dividasParaExibir = [...dividasCadastradas]; 
 
-                // Adiciona exemplos se não houver dívidas cadastradas
                 if (dividasParaExibir.length === 0) {
                      if(semDividasMsg) semDividasMsg.style.display = 'none'; 
                     dividasParaExibir = [ 
@@ -1959,7 +2465,7 @@
                     
                     let statusDivida = divida.eParcelada ? 'Parcelada' : 'Única';
                     let valorExibido = `R$ ${parseFloat(divida.valorTotal).toFixed(2)}`;
-                     if (divida.eParcelada && divida.parcelasRestantes && divida.valorParcela) { // Ajustado para mostrar info de parcela
+                     if (divida.eParcelada && divida.parcelasRestantes && divida.valorParcela) { 
                          valorExibido = `R$ ${parseFloat(divida.valorParcela).toFixed(2)} (Restam ${divida.parcelasRestantes}/${divida.numParcelas})`;
                     } else if (divida.eParcelada && divida.valorParcela) {
                          valorExibido = `Parcela: R$ ${parseFloat(divida.valorParcela).toFixed(2)} (Total: R$ ${parseFloat(divida.valorTotal).toFixed(2)})`;
@@ -2013,7 +2519,7 @@
                         const dividaId = event.target.dataset.id;
                         let dividaSelecionada = dividasCadastradas.find(d => d.id === dividaId);
                         
-                        if(!dividaSelecionada) { // Tenta buscar nos exemplos se não achar nas cadastradas
+                        if(!dividaSelecionada) { 
                              if(dividaId === 'exemplo1') {
                                 dividaSelecionada = { id: 'exemplo1', nome: 'Cartão Loja X', valorTotal: 1200, eParcelada: true, numParcelas: 8, valorParcela: 150, parcelasRestantes: 5 };
                             } else if (dividaId === 'exemplo2') {
@@ -2051,7 +2557,7 @@
 
                 const sugestoesVendasUl = document.getElementById('lista-sugestoes-vendas-quitacao');
                 if (sugestoesVendasUl) {
-                    sugestoesVendasUl.innerHTML = `<li>Vender ${Math.ceil(divida.valorTotal / 25)} unidades do Produto "Exemplo" (Lucro Estimado: R$ 25,00)</li>`; // Exemplo mais dinâmico
+                    sugestoesVendasUl.innerHTML = `<li>Vender ${Math.ceil(divida.valorTotal / 25)} unidades do Produto "Exemplo" (Lucro Estimado: R$ 25,00)</li>`; 
                 }
                 const dicaEconomiaEl = document.getElementById('dica-economia-quitacao');
                 if(dicaEconomiaEl) dicaEconomiaEl.textContent = "Avalie pequenas despesas diárias. Um café a menos por dia pode somar uma boa economia no final do mês!";
@@ -2141,7 +2647,7 @@
             }
 
 
-            if(btnCriarMetaQuitacaoReal) {
+            if(btnCriarMetaQuitacaoReal) { 
                 btnCriarMetaQuitacaoReal.addEventListener('click', () => {
                     if(!dividaAtualParaPlanejamento) {
                         alert("Nenhuma dívida selecionada para criar meta.");
@@ -2169,7 +2675,456 @@
             }
 
 
-            // --- Fim Lógica da Página Liberdade Financeira ---
+            // --- Início Lógica da Página Lucro Certo ---
+            let produtoSelecionadoLucroCerto = null; 
+
+            function popularProdutosSelectLucroCerto() {
+                if (!lucroProdutoSelect) return;
+                lucroProdutoSelect.innerHTML = '<option value="">-- Escolha um Produto --</option>';
+                produtosCadastrados.forEach(produto => { 
+                    const option = document.createElement('option');
+                    option.value = produto.id;
+                    option.textContent = produto.nome;
+                    lucroProdutoSelect.appendChild(option);
+                });
+            }
+
+            function calcularLucroProduto() {
+                if (!produtoSelecionadoLucroCerto || !lucroMargemDesejadaInput || !lucroCustoTotalDisplayEl || !lucroPrecoVendaSugeridoEl || !lucroLiquidoUnidadeEl) return;
+
+                const custoCompra = produtoSelecionadoLucroCerto.valorCustoCompra;
+                const custoFixoUnit = parseFloat(custoFixoUnitarioDisplayEl?.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                const custoVarUnitTotal = parseFloat(custoVariavelUnitarioTotalDisplayEl?.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                const custoFreteUnit = 0.80; 
+                
+                const custoTotalUnitarioProduto = custoCompra + custoFixoUnit + custoVarUnitTotal + custoFreteUnit;
+                lucroCustoTotalDisplayEl.textContent = `R$ ${custoTotalUnitarioProduto.toFixed(2)}`;
+
+                const margemDesejada = parseFloat(lucroMargemDesejadaInput.value) / 100; // Agora permite margens > 100%
+                if (isNaN(margemDesejada) || margemDesejada < 0) { // Apenas verifica se é negativo
+                    if(lucroPrecoVendaSugeridoEl) lucroPrecoVendaSugeridoEl.textContent = 'Margem Inválida';
+                    if(lucroLiquidoUnidadeEl) lucroLiquidoUnidadeEl.textContent = 'R$ 0,00';
+                    if(alertaMargemBaixaEl) alertaMargemBaixaEl.style.display = 'block';
+                    if(alertaMargemBaixaEl) alertaMargemBaixaEl.textContent = 'Margem de lucro inválida. Deve ser um valor positivo.';
+                    if (lucroProdutoChartInstance) lucroProdutoChartInstance.destroy();
+                    return;
+                }
+
+                const precoVenda = custoTotalUnitarioProduto * (1 + margemDesejada); // Fórmula corrigida
+                lucroPrecoVendaSugeridoEl.textContent = `R$ ${precoVenda.toFixed(2)}`;
+
+                const lucroLiquido = precoVenda - custoTotalUnitarioProduto;
+                lucroLiquidoUnidadeEl.textContent = `R$ ${lucroLiquido.toFixed(2)}`;
+
+                atualizarGraficoLucroProduto(custoFixoUnit, custoVarUnitTotal, custoFreteUnit, lucroLiquido, custoCompra);
+
+                const margemCalculada = (lucroLiquido / precoVenda) * 100;
+                if (precoVenda > 0 && margemCalculada < 30 && margemCalculada >= 0) {  // Garante que a margem não é negativa para o alerta
+                    if(alertaMargemBaixaEl) {
+                        alertaMargemBaixaEl.textContent = 'Atenção! Sua margem de lucro está abaixo de 30%. Considere revisar seus custos ou preço de venda.';
+                        alertaMargemBaixaEl.style.display = 'block';
+                    }
+                } else {
+                    if(alertaMargemBaixaEl) alertaMargemBaixaEl.style.display = 'none';
+                }
+                
+                calcularProjecaoLucroMensal();
+                calcularMetaVendasLucro();
+            }
+            
+            function atualizarGraficoLucroProduto(cf, cv, frete, lucro, custoCompra) {
+                if (lucroProdutoChartInstance) {
+                    lucroProdutoChartInstance.destroy();
+                }
+                if (!lucroProdutoChartCanvas || (cf === 0 && cv === 0 && frete === 0 && lucro <= 0 && custoCompra === 0) ) return; 
+
+                const precoVenda = custoCompra + cf + cv + frete + lucro;
+                if (precoVenda <= 0) return; 
+
+                const data = {
+                    labels: ['Custo Fixo Unit.', 'Custo Variável Unit.', 'Custo Frete Unit.', 'Lucro Líquido', 'Custo Compra'],
+                    datasets: [{
+                        label: 'Composição do Preço de Venda',
+                        data: [
+                            (cf / precoVenda * 100).toFixed(1), 
+                            (cv / precoVenda * 100).toFixed(1),
+                            (frete / precoVenda * 100).toFixed(1),
+                            (lucro / precoVenda * 100).toFixed(1),
+                            (custoCompra / precoVenda * 100).toFixed(1)
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 205, 86, 0.7)', 
+                            'rgba(255, 159, 64, 0.7)', 
+                            'rgba(201, 203, 207, 0.7)', 
+                            'rgba(75, 192, 192, 0.7)', 
+                            'rgba(236, 72, 153, 0.7)'  
+                        ],
+                        borderColor: [
+                            'rgba(255, 205, 86, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(201, 203, 207, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(236, 72, 153, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                };
+                lucroProdutoChartInstance = new Chart(lucroProdutoChartCanvas, {
+                    type: 'doughnut',
+                    data: data,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { font: { size: 10 } }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.label || '';
+                                        if (label) { label += ': '; }
+                                        if (context.parsed !== null) { label += context.parsed + '%'; }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+
+            function calcularProjecaoLucroMensal() {
+                if(!lucroQtdVenderMesInput || !lucroLiquidoUnidadeEl || !lucroMensalProjetadoEl) return;
+                const qtd = parseInt(lucroQtdVenderMesInput.value) || 0;
+                const lucroUnidade = parseFloat(lucroLiquidoUnidadeEl.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                const lucroProjetado = qtd * lucroUnidade;
+                lucroMensalProjetadoEl.textContent = `R$ ${lucroProjetado.toFixed(2)}`;
+            }
+
+            function calcularMetaVendasLucro() {
+                if(!lucroDesejadoMensalInput || !lucroLiquidoUnidadeEl || !lucroMetaVendasUnidadesEl) return;
+                const lucroDesejado = parseFloat(lucroDesejadoMensalInput.value) || 0;
+                const lucroUnidade = parseFloat(lucroLiquidoUnidadeEl.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                
+                if (lucroUnidade > 0) {
+                    const unidadesNecessarias = Math.ceil(lucroDesejado / lucroUnidade);
+                    lucroMetaVendasUnidadesEl.textContent = `${unidadesNecessarias} unidades`;
+                } else {
+                    lucroMetaVendasUnidadesEl.textContent = `Defina lucro/unidade`;
+                }
+            }
+
+            if(lucroProdutoSelect) {
+                lucroProdutoSelect.addEventListener('change', function() {
+                    const produtoId = this.value;
+                    if (produtoId) {
+                        produtoSelecionadoLucroCerto = produtosCadastrados.find(p => p.id === produtoId);
+                        if (produtoSelecionadoLucroCerto) {
+                            if(lucroCertoContentEl) lucroCertoContentEl.style.display = 'block';
+                            if(lucroCertoSelecioneProdutoMsg) lucroCertoSelecioneProdutoMsg.style.display = 'none';
+                            if(lucroNomeProdutoDisplayEl) lucroNomeProdutoDisplayEl.textContent = produtoSelecionadoLucroCerto.nome;
+                            if(lucroMargemDesejadaInput) lucroMargemDesejadaInput.value = 50; 
+                            calcularLucroProduto();
+                        }
+                    } else {
+                         if(lucroCertoContentEl) lucroCertoContentEl.style.display = 'none';
+                         if(lucroCertoSelecioneProdutoMsg) lucroCertoSelecioneProdutoMsg.style.display = 'block';
+                         produtoSelecionadoLucroCerto = null;
+                         if (lucroProdutoChartInstance) lucroProdutoChartInstance.destroy();
+                    }
+                });
+            }
+
+            if(lucroMargemDesejadaInput) lucroMargemDesejadaInput.addEventListener('input', calcularLucroProduto);
+            if(lucroQtdVenderMesInput) lucroQtdVenderMesInput.addEventListener('input', calcularProjecaoLucroMensal);
+            if(lucroDesejadoMensalInput) lucroDesejadoMensalInput.addEventListener('input', calcularMetaVendasLucro);
+
+            // --- Fim Lógica da Página Lucro Certo ---
+
+            // --- Lógica da Página Calculadoras (Hub e Individuais) ---
+            const calculatorCards = document.querySelectorAll('.calculator-card');
+            calculatorCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const targetCalculatorPageId = card.dataset.targetCalculator;
+                    if (targetCalculatorPageId) {
+                        setActivePage(targetCalculatorPageId);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.btn-voltar-calculadoras').forEach(button => {
+                button.addEventListener('click', () => {
+                    setActivePage('calculadoras-page');
+                });
+            });
+
+            function resetFormsCalculadoras(){ 
+                // Reset Calc Lucro Ideal
+                if(calcLucroIdealProdutoSelect) calcLucroIdealProdutoSelect.value = "";
+                const calcLucroProdutoDetalhes = document.getElementById('calc-lucro-ideal-produto-detalhes');
+                if(calcLucroProdutoDetalhes) calcLucroProdutoDetalhes.style.display = 'none';
+                if(document.getElementById('calc-lucro-ideal-margem-desejada')) document.getElementById('calc-lucro-ideal-margem-desejada').value = "50";
+                if(document.getElementById('calc-lucro-ideal-preco-ideal')) document.getElementById('calc-lucro-ideal-preco-ideal').textContent = 'R$ 0,00';
+                if(document.getElementById('calc-lucro-ideal-liquido-unidade')) document.getElementById('calc-lucro-ideal-liquido-unidade').textContent = 'R$ 0,00';
+
+                // Reset Calc Frete
+                 if(document.getElementById('calc-frete-total')) document.getElementById('calc-frete-total').value = '';
+                 if(document.getElementById('calc-frete-num-produtos')) document.getElementById('calc-frete-num-produtos').value = '';
+                 if(document.getElementById('calc-frete-resultado')) document.getElementById('calc-frete-resultado').textContent = 'R$ 0,00';
+
+                // Reset Calc Meta Vendas
+                if(document.getElementById('calc-meta-lucro-desejado')) document.getElementById('calc-meta-lucro-desejado').value = '';
+                if(calcMetaVendasProdutoSelect) calcMetaVendasProdutoSelect.value = '';
+                if(document.getElementById('calc-meta-lucro-unidade-produto')) document.getElementById('calc-meta-lucro-unidade-produto').textContent = 'R$ 0,00';
+                if(document.getElementById('calc-meta-unidades-vender')) document.getElementById('calc-meta-unidades-vender').textContent = '0 unidades';
+
+                // Reset Calc Reinvestimento
+                if(document.getElementById('calc-reinvest-lucro-disponivel')) document.getElementById('calc-reinvest-lucro-disponivel').value = '';
+                if(document.getElementById('calc-reinvest-perc-negocio')) document.getElementById('calc-reinvest-perc-negocio').value = '50';
+                if(document.getElementById('calc-reinvest-perc-reserva')) document.getElementById('calc-reinvest-perc-reserva').value = '30';
+                if(document.getElementById('calc-reinvest-perc-dividas')) document.getElementById('calc-reinvest-perc-dividas').value = '20';
+                if(document.getElementById('calc-reinvest-valor-negocio')) document.getElementById('calc-reinvest-valor-negocio').textContent = 'R$ 0,00';
+                if(document.getElementById('calc-reinvest-valor-reserva')) document.getElementById('calc-reinvest-valor-reserva').textContent = 'R$ 0,00';
+                if(document.getElementById('calc-reinvest-valor-dividas')) document.getElementById('calc-reinvest-valor-dividas').textContent = 'R$ 0,00';
+                if(document.getElementById('calc-reinvest-soma-perc-aviso')) document.getElementById('calc-reinvest-soma-perc-aviso').style.display = 'none';
+
+                // Reset Calc Precificação Manual
+                if(document.getElementById('calc-manual-custo-produto')) document.getElementById('calc-manual-custo-produto').value = '';
+                if(document.getElementById('calc-manual-custos-variaveis')) document.getElementById('calc-manual-custos-variaveis').value = '';
+                if(document.getElementById('calc-manual-custos-fixos-rateio')) document.getElementById('calc-manual-custos-fixos-rateio').value = '';
+                if(document.getElementById('calc-manual-margem-lucro')) document.getElementById('calc-manual-margem-lucro').value = '';
+                if(document.getElementById('calc-manual-custo-total-display')) document.getElementById('calc-manual-custo-total-display').textContent = 'R$ 0,00';
+                if(document.getElementById('calc-manual-preco-venda-display')) document.getElementById('calc-manual-preco-venda-display').textContent = 'R$ 0,00';
+                if(document.getElementById('calc-manual-lucro-liquido-display')) document.getElementById('calc-manual-lucro-liquido-display').textContent = 'R$ 0,00';
+            }
+            
+            // Funções para popular selects das calculadoras
+            function popularProdutosSelectCalcLucroIdeal() {
+                if (!calcLucroIdealProdutoSelect) return;
+                calcLucroIdealProdutoSelect.innerHTML = '<option value="">-- Escolha um Produto --</option>';
+                produtosCadastrados.forEach(produto => {
+                    const option = document.createElement('option');
+                    option.value = produto.id;
+                    option.textContent = produto.nome;
+                    option.dataset.custoCompra = produto.valorCustoCompra;
+                    calcLucroIdealProdutoSelect.appendChild(option);
+                });
+                const detalhesEl = document.getElementById('calc-lucro-ideal-produto-detalhes');
+                if(detalhesEl) detalhesEl.style.display = 'none'; 
+            }
+            function popularProdutosSelectCalcMetaVendas() {
+                 if (!calcMetaVendasProdutoSelect) return;
+                calcMetaVendasProdutoSelect.innerHTML = '<option value="">-- Escolha um Produto Chave --</option>';
+                produtosCadastrados.forEach(produto => {
+                    const option = document.createElement('option');
+                    option.value = produto.id;
+                    option.textContent = produto.nome;
+                    const custoFixoUnitario = parseFloat(custoFixoUnitarioDisplayEl?.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoVariavelUnitario = parseFloat(custoVariavelUnitarioTotalDisplayEl?.textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoFrete = 0.80; 
+                    const custoTotalProduto = produto.valorCustoCompra + custoFixoUnitario + custoVariavelUnitario + custoFrete;
+                    // Assumindo uma margem padrão de 50% para calcular o lucro unidade para o select
+                    const precoVendaSimulado = custoTotalProduto * (1 + 0.50); // Fórmula corrigida para markup
+                    option.dataset.lucroUnidade = (precoVendaSimulado - custoTotalProduto).toFixed(2);
+                    calcMetaVendasProdutoSelect.appendChild(option);
+                });
+                if(document.getElementById('calc-meta-lucro-unidade-produto')) document.getElementById('calc-meta-lucro-unidade-produto').textContent = 'R$ 0,00';
+                if(document.getElementById('calc-meta-unidades-vender')) document.getElementById('calc-meta-unidades-vender').textContent = '0 unidades';
+            }
+
+            // --- Event Listeners para Calculadoras Específicas ---
+            
+            // Calculadora Lucro Ideal
+            if(calcLucroIdealProdutoSelect) {
+                calcLucroIdealProdutoSelect.addEventListener('change', function() {
+                    const produtoId = this.value;
+                    const detalhesEl = document.getElementById('calc-lucro-ideal-produto-detalhes');
+                    if (produtoId && detalhesEl) {
+                        const produto = produtosCadastrados.find(p => p.id === produtoId);
+                        if (produto) {
+                            document.getElementById('calc-lucro-ideal-custo-compra').textContent = `R$ ${parseFloat(produto.valorCustoCompra).toFixed(2)}`;
+                            document.getElementById('calc-lucro-ideal-custo-fixo').textContent = custoFixoUnitarioDisplayEl?.textContent || 'R$ 0,00';
+                            document.getElementById('calc-lucro-ideal-custo-variavel').textContent = custoVariavelUnitarioTotalDisplayEl?.textContent || 'R$ 0,00';
+                            document.getElementById('calc-lucro-ideal-custo-frete').textContent = 'R$ 0.80'; // Simulado
+                            detalhesEl.style.display = 'block';
+                            const margemInput = document.getElementById('calc-lucro-ideal-margem-desejada');
+                            if (margemInput) margemInput.value = 50; // Reset margem
+                            const btnCalc = document.getElementById('btn-calcular-lucro-ideal');
+                            if (btnCalc) btnCalc.click(); // Simula clique para calcular
+                        }
+                    } else if(detalhesEl) {
+                        detalhesEl.style.display = 'none';
+                    }
+                });
+            }
+            const btnCalcularLucroIdeal = document.getElementById('btn-calcular-lucro-ideal');
+            if(btnCalcularLucroIdeal) {
+                btnCalcularLucroIdeal.addEventListener('click', () => {
+                     const produtoId = document.getElementById('calc-lucro-ideal-produto-select').value;
+                     if(!produtoId) {alert("Selecione um produto primeiro."); return;}
+                    const produto = produtosCadastrados.find(p => p.id === produtoId);
+                    if(!produto) return;
+
+                    const custoCompra = produto.valorCustoCompra;
+                    const custoFixoUnit = parseFloat(document.getElementById('calc-lucro-ideal-custo-fixo').textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoVarUnit = parseFloat(document.getElementById('calc-lucro-ideal-custo-variavel').textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoFreteUnit = parseFloat(document.getElementById('calc-lucro-ideal-custo-frete').textContent.replace('R$ ', '').replace(',', '.')) || 0;
+                    const custoTotalProduto = custoCompra + custoFixoUnit + custoVarUnit + custoFreteUnit;
+                    document.getElementById('calc-lucro-ideal-custo-total-produto').textContent = `R$ ${custoTotalProduto.toFixed(2)}`;
+
+                    const margemEl = document.getElementById('calc-lucro-ideal-margem-desejada');
+                    const margem = parseFloat(margemEl.value) / 100; // margem como decimal (ex: 50% -> 0.5)
+
+                    if(isNaN(margem) || margem < 0) { 
+                        document.getElementById('calc-lucro-ideal-preco-ideal').textContent = 'Margem Inválida';
+                        document.getElementById('calc-lucro-ideal-liquido-unidade').textContent = 'R$ 0,00';
+                        return;
+                    }
+                    // Preço de Venda = Custo Total * (1 + Margem de Lucro)
+                    const precoVenda = custoTotalProduto * (1 + margem);
+                    const lucroUnidade = precoVenda - custoTotalProduto;
+                    document.getElementById('calc-lucro-ideal-preco-ideal').textContent = `R$ ${precoVenda.toFixed(2)}`;
+                    document.getElementById('calc-lucro-ideal-liquido-unidade').textContent = `R$ ${lucroUnidade.toFixed(2)}`;
+                });
+            }
+            if(document.getElementById('btn-salvar-preco-produto-lucro-ideal')) {
+                document.getElementById('btn-salvar-preco-produto-lucro-ideal').addEventListener('click', () => {
+                    alert("Preço salvo no produto (Simulação)!");
+                });
+            }
+
+            // Calculadora Frete Unitário
+            const btnCalcularFreteUnitario = document.getElementById('btn-calcular-frete-unitario');
+            if(btnCalcularFreteUnitario) {
+                btnCalcularFreteUnitario.addEventListener('click', () => {
+                    const totalFrete = parseFloat(document.getElementById('calc-frete-total').value) || 0;
+                    const numProdutos = parseInt(document.getElementById('calc-frete-num-produtos').value) || 1;
+                    const resultadoEl = document.getElementById('calc-frete-resultado');
+                    if (numProdutos <= 0) {
+                        resultadoEl.textContent = "Número de produtos inválido.";
+                        return;
+                    }
+                    const freteUnitario = totalFrete / numProdutos;
+                    resultadoEl.textContent = `R$ ${freteUnitario.toFixed(2)}`;
+                });
+            }
+            if(document.getElementById('btn-salvar-frete-custo-variavel')) {
+                document.getElementById('btn-salvar-frete-custo-variavel').addEventListener('click', () => {
+                     const freteUnitario = parseFloat(document.getElementById('calc-frete-resultado').textContent.replace('R$ ','').replace(',','.')) || 0;
+                     if(freteUnitario > 0) {
+                        custosVariaveis.push({nome: "Frete Unitário (Pedido)", valorUnitario: freteUnitario});
+                        if(document.getElementById('despesas-page').classList.contains('active')){
+                            if(typeof exibirCustosVariaveis === "function") exibirCustosVariaveis();
+                        }
+                         alert("Frete unitário adicionado como custo variável! (Simulação)");
+                     } else {
+                         alert("Calcule o frete unitário primeiro.");
+                     }
+                });
+            }
+
+
+            // Calculadora Meta de Vendas
+            const btnCalcularMetaVendas = document.getElementById('btn-calcular-meta-vendas');
+            if(btnCalcularMetaVendas && calcMetaVendasProdutoSelect) {
+                 calcMetaVendasProdutoSelect.addEventListener('change', function(){ 
+                    const selectedOption = this.options[this.selectedIndex];
+                    if (selectedOption && selectedOption.value) { 
+                        const lucroUnidade = parseFloat(selectedOption.dataset.lucroUnidade) || 0;
+                        document.getElementById('calc-meta-lucro-unidade-produto').textContent = `R$ ${lucroUnidade.toFixed(2)}`;
+                    } else {
+                         document.getElementById('calc-meta-lucro-unidade-produto').textContent = `R$ 0,00`;
+                    }
+                    document.getElementById('calc-meta-unidades-vender').textContent = '0 unidades'; 
+                 });
+
+                btnCalcularMetaVendas.addEventListener('click', () => {
+                    const lucroDesejado = parseFloat(document.getElementById('calc-meta-lucro-desejado').value) || 0;
+                    const produtoSelecionadoOption = calcMetaVendasProdutoSelect.options[calcMetaVendasProdutoSelect.selectedIndex];
+                    const lucroUnidadeProduto = parseFloat(produtoSelecionadoOption.dataset.lucroUnidade) || 0;
+                    const resultadoEl = document.getElementById('calc-meta-unidades-vender');
+
+                    if(!produtoSelecionadoOption.value){
+                        alert("Por favor, selecione um produto chave.");
+                        return;
+                    }
+                    document.getElementById('calc-meta-lucro-unidade-produto').textContent = `R$ ${lucroUnidadeProduto.toFixed(2)}`;
+
+                    if (lucroDesejado <= 0) {
+                        resultadoEl.textContent = "Defina uma meta de lucro válida.";
+                        return;
+                    }
+                    if (lucroUnidadeProduto <= 0) {
+                        resultadoEl.textContent = "Lucro por unidade inválido para cálculo.";
+                        return;
+                    }
+                    const unidadesNecessarias = Math.ceil(lucroDesejado / lucroUnidadeProduto);
+                    resultadoEl.textContent = `${unidadesNecessarias} unidades`;
+                });
+            }
+
+            // Calculadora Reinvestimento Inteligente
+            const btnCalcularReinvestimento = document.getElementById('btn-calcular-reinvestimento');
+            if(btnCalcularReinvestimento){
+                btnCalcularReinvestimento.addEventListener('click', () => {
+                    const lucroDisponivel = parseFloat(document.getElementById('calc-reinvest-lucro-disponivel').value) || 0;
+                    const percNegocio = parseFloat(document.getElementById('calc-reinvest-perc-negocio').value) || 0;
+                    const percReserva = parseFloat(document.getElementById('calc-reinvest-perc-reserva').value) || 0;
+                    const percDividas = parseFloat(document.getElementById('calc-reinvest-perc-dividas').value) || 0;
+                    const avisoEl = document.getElementById('calc-reinvest-soma-perc-aviso');
+
+                    if(percNegocio + percReserva + percDividas !== 100){
+                        avisoEl.style.display = 'block';
+                        return;
+                    }
+                    avisoEl.style.display = 'none';
+
+                    document.getElementById('calc-reinvest-valor-negocio').textContent = `R$ ${(lucroDisponivel * (percNegocio / 100)).toFixed(2)}`;
+                    document.getElementById('calc-reinvest-valor-reserva').textContent = `R$ ${(lucroDisponivel * (percReserva / 100)).toFixed(2)}`;
+                    document.getElementById('calc-reinvest-valor-dividas').textContent = `R$ ${(lucroDisponivel * (percDividas / 100)).toFixed(2)}`;
+                });
+            }
+            ['calc-reinvest-perc-negocio', 'calc-reinvest-perc-reserva', 'calc-reinvest-perc-dividas'].forEach(id => {
+                const inputEl = document.getElementById(id);
+                if(inputEl) inputEl.addEventListener('input', () => { 
+                    document.getElementById('calc-reinvest-valor-negocio').textContent = 'R$ 0,00';
+                    document.getElementById('calc-reinvest-valor-reserva').textContent = 'R$ 0,00';
+                    document.getElementById('calc-reinvest-valor-dividas').textContent = 'R$ 0,00';
+                    document.getElementById('calc-reinvest-soma-perc-aviso').style.display = 'none';
+                });
+            });
+
+
+            // Calculadora Precificação Manual
+            const btnCalcularPrecoManual = document.getElementById('btn-calcular-preco-manual');
+            if(btnCalcularPrecoManual){
+                btnCalcularPrecoManual.addEventListener('click', () => {
+                    const custoProduto = parseFloat(document.getElementById('calc-manual-custo-produto').value) || 0;
+                    const custosVariaveis = parseFloat(document.getElementById('calc-manual-custos-variaveis').value) || 0;
+                    const custosFixosRateio = parseFloat(document.getElementById('calc-manual-custos-fixos-rateio').value) || 0;
+                    const margemLucro = parseFloat(document.getElementById('calc-manual-margem-lucro').value) / 100 || 0; // Margem como decimal
+
+                    const custoTotal = custoProduto + custosVariaveis + custosFixosRateio;
+                    document.getElementById('calc-manual-custo-total-display').textContent = `R$ ${custoTotal.toFixed(2)}`;
+
+                    if(isNaN(margemLucro) || margemLucro < 0) { 
+                         document.getElementById('calc-manual-preco-venda-display').textContent = 'Margem Inválida';
+                         document.getElementById('calc-manual-lucro-liquido-display').textContent = 'R$ 0,00';
+                        return;
+                    }
+                     // Preço de Venda = Custo Total * (1 + Margem de Lucro)
+                    const precoVenda = custoTotal * (1 + margemLucro);
+                    const lucroLiquido = precoVenda - custoTotal;
+
+                    document.getElementById('calc-manual-preco-venda-display').textContent = `R$ ${precoVenda.toFixed(2)}`;
+                    document.getElementById('calc-manual-lucro-liquido-display').textContent = `R$ ${lucroLiquido.toFixed(2)}`;
+                });
+            }
+
+            // --- Fim Lógica da Página Calculadoras (Hub e Individuais) ---
 
 
             // Define a página inicial (Dashboard) e recalcula custos se for a página de despesas
@@ -2185,6 +3140,18 @@
                      if(typeof exibirCustosVariaveis === "function") exibirCustosVariaveis();
                 } else if (activePage.id === 'liberdade-financeira-page') {
                     if(typeof exibirDividas === "function") exibirDividas();
+                } else if (activePage.id === 'produtos-page') {
+                    if(typeof exibirProdutosEmCards === 'function') exibirProdutosEmCards();
+                } else if (activePage.id === 'vendas-page') {
+                    if(typeof exibirVendasEmCards === 'function') exibirVendasEmCards();
+                    if(typeof popularProdutosSelectVenda === 'function') popularProdutosSelectVenda();
+                } else if (activePage.id === 'lucro-certo-page') {
+                    if(typeof popularProdutosSelectLucroCerto === "function") popularProdutosSelectLucroCerto();
+                     if(lucroCertoContentEl) lucroCertoContentEl.style.display = 'none';
+                     if(lucroCertoSelecioneProdutoMsg) lucroCertoSelecioneProdutoMsg.style.display = 'block';
+                } else if (activePage.id.startsWith('calc-')) {
+                    if(activePage.id === 'calc-lucro-ideal-page' && typeof popularProdutosSelectCalcLucroIdeal === "function") popularProdutosSelectCalcLucroIdeal();
+                    if(activePage.id === 'calc-meta-vendas-page' && typeof popularProdutosSelectCalcMetaVendas === "function") popularProdutosSelectCalcMetaVendas();
                 }
             }
         });
